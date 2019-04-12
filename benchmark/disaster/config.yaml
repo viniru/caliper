@@ -1,0 +1,186 @@
+---
+test:
+  clients:
+    type: local
+    number: 40
+  rounds:
+  - label: init
+    txNumber:
+    - 50
+    - 150
+    - 350
+    - 600
+    - 900
+    - 1200
+    - 1500
+    - 1800
+    - 2000
+    - 2500
+    - 1000
+    - 1000
+    - 1000
+    - 1000
+    - 1000
+    - 1000
+    - 1000
+    - 1000
+    - 1000
+    - 1000
+    rateControl:
+    - type: fixed-rate
+      opts:
+        tps: 50
+    - type: fixed-rate
+      opts:
+        tps: 50
+    - type: fixed-rate
+      opts:
+        tps: 50
+    - type: fixed-rate
+      opts:
+        tps: 50
+    - type: fixed-rate
+      opts:
+        tps: 50
+    - type: fixed-rate
+      opts:
+        tps: 50
+    - type: fixed-rate
+      opts:
+        tps: 50
+    - type: fixed-rate
+      opts:
+        tps: 50
+    - type: fixed-rate
+      opts:
+        tps: 50
+    - type: fixed-rate
+      opts:
+        tps: 50
+    - type: fixed-rate
+      opts:
+        tps: 10
+    - type: fixed-rate
+      opts:
+        tps: 25
+    - type: fixed-rate
+      opts:
+        tps: 50
+    - type: fixed-rate
+      opts:
+        tps: 70
+    - type: fixed-rate
+      opts:
+        tps: 100
+    - type: fixed-rate
+      opts:
+        tps: 200
+    - type: fixed-rate
+      opts:
+        tps: 250
+    - type: fixed-rate
+      opts:
+        tps: 500
+    - type: fixed-rate
+      opts:
+        tps: 700
+    - type: fixed-rate
+      opts:
+        tps: 900
+    callback: benchmark/disaster/init.js
+  - label: query
+    txNumber:
+    - 50
+    - 150
+    - 350
+    - 600
+    - 900
+    - 1200
+    - 1500
+    - 1800
+    - 2000
+    - 2500
+    - 1000
+    - 1000
+    - 1000
+    - 1000
+    - 1000
+    - 1000
+    - 1000
+    - 1000
+    - 1000
+    - 1000
+    rateControl:
+    - type: fixed-rate
+      opts:
+        tps: 50
+    - type: fixed-rate
+      opts:
+        tps: 50
+    - type: fixed-rate
+      opts:
+        tps: 50
+    - type: fixed-rate
+      opts:
+        tps: 50
+    - type: fixed-rate
+      opts:
+        tps: 50
+    - type: fixed-rate
+      opts:
+        tps: 50
+    - type: fixed-rate
+      opts:
+        tps: 50
+    - type: fixed-rate
+      opts:
+        tps: 50
+    - type: fixed-rate
+      opts:
+        tps: 50
+    - type: fixed-rate
+      opts:
+        tps: 50
+    - type: fixed-rate
+      opts:
+        tps: 10
+    - type: fixed-rate
+      opts:
+        tps: 25
+    - type: fixed-rate
+      opts:
+        tps: 50
+    - type: fixed-rate
+      opts:
+        tps: 70
+    - type: fixed-rate
+      opts:
+        tps: 100
+    - type: fixed-rate
+      opts:
+        tps: 200
+    - type: fixed-rate
+      opts:
+        tps: 250
+    - type: fixed-rate
+      opts:
+        tps: 500
+    - type: fixed-rate
+      opts:
+        tps: 700
+    - type: fixed-rate
+      opts:
+        tps: 900
+    callback: benchmark/disaster/query.js
+monitor:
+  type:
+  - docker
+  - process
+  docker:
+    name:
+    - all
+  process:
+  - command: node
+    arguments: local-client.js
+    multiOutput: avg
+  interval: 1

@@ -1,0 +1,1284 @@
+
+> caliper@0.1.0 bench /home/vinayak/Documents/go/src/github.com/hyperledger/caliper
+> node ./scripts/main.js "-c" "benchmark/trade/config.yaml" "-n" "network/fabric-v1.4/dev/fabric-go.json"
+
+
+> caliper@0.1.0 bench /home/vinayak/Documents/go/src/github.com/hyperledger/caliper
+> node ./scripts/main.js "-c" "benchmark/disaster/config.yaml" "-n" "network/fabric-v1.4/dev/fabric-go.json"
+
+info: [bench-flow.js]: ####### Caliper Test #######
+info: [bench-flow.js]: Executing command: docker-compose -f network/fabric-v1.4/dev/docker-compose.yaml up -d;sleep 3s
+info: [create-channel.js]: Creating mychannel...
+info: [create-channel.js]: Created mychannel successfully
+info: [create-channel.js]: Sleeping 5s...
+info: [join-channel.js]: Joining channels...
+info: [join-channel.js]: Joining organization org1 to channel mychannel...
+info: [join-channel.js]: Successfully joined peerOrg1's peers to mychannel
+info: [join-channel.js]: Successfully joined mychannel
+info: [install-chaincode.js]: installing all chaincodes......
+info: [install-chaincode.js]: Installing chaincode disaster...
+info: [install-chaincode.js]: Installed chaincode disaster successfully in all peers
+info: [instantiate-chaincode.js]: Instantiating chaincodes...
+info: [e2eUtils.js]: instantiate proposal was good
+info: [e2eUtils.js]: Successfully sent Proposal and received ProposalResponse
+info: [e2eUtils.js]: The chaincode instantiate transaction has been committed on peer localhost:7051
+info: [e2eUtils.js]: The chaincode instantiate transaction was valid.
+info: [e2eUtils.js]: Successfully sent instantiatetransaction to the orderer.
+info: [instantiate-chaincode.js]: Instantiated chaincode disaster successfully
+info: [instantiate-chaincode.js]: Sleeping 5s...
+info: [bench-flow.js]: Started monitor successfully
+info: [bench-flow.js]: ####### Testing 'init' #######
+info: [bench-flow.js]: ------ Test round 1 ------
+info: [demo.js]: [Transaction Info] - Submitted: 0 Succ: 0 Fail:0 Unfinished:0
+info: [demo.js]: [Transaction Info] - Submitted: 0 Succ: 0 Fail:0 Unfinished:0
+info: [demo.js]: [Transaction Info] - Submitted: 0 Succ: 0 Fail:0 Unfinished:0
+info: [demo.js]: [Transaction Info] - Submitted: 0 Succ: 0 Fail:0 Unfinished:0
+info: [demo.js]: [Transaction Info] - Submitted: 19 Succ: 5 Fail:0 Unfinished:14
+info: [demo.js]: [Transaction Info] - Submitted: 49 Succ: 26 Fail:0 Unfinished:23
+info: [demo.js]: [Transaction Info] - Submitted: 74 Succ: 46 Fail:0 Unfinished:28
+info: [demo.js]: [Transaction Info] - Submitted: 99 Succ: 68 Fail:0 Unfinished:31
+info: [demo.js]: [Transaction Info] - Submitted: 124 Succ: 88 Fail:0 Unfinished:36
+info: [demo.js]: [Transaction Info] - Submitted: 149 Succ: 112 Fail:0 Unfinished:37
+info: [demo.js]: [Transaction Info] - Submitted: 174 Succ: 131 Fail:0 Unfinished:43
+info: [demo.js]: [Transaction Info] - Submitted: 199 Succ: 155 Fail:0 Unfinished:44
+info: [demo.js]: [Transaction Info] - Submitted: 224 Succ: 175 Fail:0 Unfinished:49
+info: [demo.js]: [Transaction Info] - Submitted: 249 Succ: 198 Fail:0 Unfinished:51
+info: [demo.js]: [Transaction Info] - Submitted: 274 Succ: 220 Fail:0 Unfinished:54
+info: [demo.js]: [Transaction Info] - Submitted: 299 Succ: 240 Fail:0 Unfinished:59
+info: [demo.js]: [Transaction Info] - Submitted: 329 Succ: 266 Fail:0 Unfinished:63
+info: [demo.js]: [Transaction Info] - Submitted: 354 Succ: 286 Fail:0 Unfinished:68
+info: [demo.js]: [Transaction Info] - Submitted: 379 Succ: 311 Fail:0 Unfinished:68
+info: [demo.js]: [Transaction Info] - Submitted: 404 Succ: 330 Fail:0 Unfinished:74
+info: [demo.js]: [Transaction Info] - Submitted: 429 Succ: 351 Fail:0 Unfinished:78
+info: [demo.js]: [Transaction Info] - Submitted: 449 Succ: 367 Fail:0 Unfinished:82
+info: [demo.js]: [Transaction Info] - Submitted: 479 Succ: 391 Fail:0 Unfinished:88
+info: [demo.js]: [Transaction Info] - Submitted: 500 Succ: 416 Fail:0 Unfinished:84
+info: [demo.js]: [Transaction Info] - Submitted: 500 Succ: 443 Fail:0 Unfinished:57
+info: [demo.js]: [Transaction Info] - Submitted: 500 Succ: 466 Fail:0 Unfinished:34
+info: [demo.js]: [Transaction Info] - Submitted: 500 Succ: 496 Fail:0 Unfinished:4
+info: [demo.js]: [Transaction Info] - Submitted: 500 Succ: 500 Fail:0 Unfinished:0
+info: [bench-flow.js]: ###test result:###
+info: [bench-flow.js]: 
++------+------+------+-----------+-------------+-------------+-------------+------------+
+| Name | Succ | Fail | Send Rate | Max Latency | Min Latency | Avg Latency | Throughput |
+|------|------|------|-----------|-------------|-------------|-------------|------------|
+| init | 500  | 0    | 24.5 tps  | 3.90 s      | 0.58 s      | 2.40 s      | 21.1 tps   |
++------+------+------+-----------+-------------+-------------+-------------+------------+
+
+info: [bench-flow.js]: ### resource stats ###
+info: [bench-flow.js]: 
++---------+-----------------------------------+-------------+-------------+----------+----------+------------+-------------+-----------+------------+
+| TYPE    | NAME                              | Memory(max) | Memory(avg) | CPU(max) | CPU(avg) | Traffic In | Traffic Out | Disc Read | Disc Write |
+|---------|-----------------------------------|-------------|-------------|----------|----------|------------|-------------|-----------|------------|
+| Process | node local-client.js(avg)         | 133.5MB     | 131.7MB     | 35.57%   | 7.56%    | -          | -           | -         | -          |
+|---------|-----------------------------------|-------------|-------------|----------|----------|------------|-------------|-----------|------------|
+| Docker  | dev-peer0.org1.example.co...er-v1 | 6.2MB       | 5.3MB       | 3.11%    | 1.92%    | 897.8KB    | 406.3KB     | 0B        | 0B         |
+|---------|-----------------------------------|-------------|-------------|----------|----------|------------|-------------|-----------|------------|
+| Docker  | peer0.org1.example.com            | 100.3MB     | 98.7MB      | 14.86%   | 11.22%   | 2.8MB      | 1.9MB       | 8.0KB     | 7.0MB      |
+|---------|-----------------------------------|-------------|-------------|----------|----------|------------|-------------|-----------|------------|
+| Docker  | orderer.example.com               | 14.3MB      | 12.7MB      | 5.46%    | 3.33%    | 1.8MB      | 1.9MB       | 0B        | 4.3MB      |
+|---------|-----------------------------------|-------------|-------------|----------|----------|------------|-------------|-----------|------------|
+| Docker  | ca.org1.example.com               | 8.0MB       | 8.0MB       | 0.00%    | 0.00%    | 893B       | 0B          | 0B        | 0B         |
++---------+-----------------------------------+-------------+-------------+----------+----------+------------+-------------+-----------+------------+
+
+info: [bench-flow.js]: ------ Passed 'init' testing ------
+info: [bench-flow.js]: Waiting 5 seconds for the next round...
+info: [demo.js]: [Transaction Info] - Submitted: 500 Succ: 500 Fail:0 Unfinished:0
+info: [demo.js]: [Transaction Info] - Submitted: 500 Succ: 500 Fail:0 Unfinished:0
+info: [demo.js]: [Transaction Info] - Submitted: 500 Succ: 500 Fail:0 Unfinished:0
+info: [demo.js]: [Transaction Info] - Submitted: 500 Succ: 500 Fail:0 Unfinished:0
+info: [bench-flow.js]: ------ Test round 2 ------
+info: [demo.js]: [Transaction Info] - Submitted: 500 Succ: 500 Fail:0 Unfinished:0
+info: [demo.js]: [Transaction Info] - Submitted: 540 Succ: 508 Fail:0 Unfinished:32
+info: [demo.js]: [Transaction Info] - Submitted: 600 Succ: 540 Fail:0 Unfinished:60
+info: [demo.js]: [Transaction Info] - Submitted: 650 Succ: 560 Fail:0 Unfinished:90
+info: [demo.js]: [Transaction Info] - Submitted: 700 Succ: 580 Fail:0 Unfinished:120
+info: [demo.js]: [Transaction Info] - Submitted: 750 Succ: 610 Fail:0 Unfinished:140
+info: [demo.js]: [Transaction Info] - Submitted: 800 Succ: 630 Fail:0 Unfinished:170
+info: [demo.js]: [Transaction Info] - Submitted: 850 Succ: 660 Fail:0 Unfinished:190
+info: [demo.js]: [Transaction Info] - Submitted: 900 Succ: 680 Fail:0 Unfinished:220
+info: [demo.js]: [Transaction Info] - Submitted: 950 Succ: 710 Fail:0 Unfinished:240
+info: [demo.js]: [Transaction Info] - Submitted: 1000 Succ: 730 Fail:0 Unfinished:270
+info: [demo.js]: [Transaction Info] - Submitted: 1000 Succ: 770 Fail:0 Unfinished:230
+info: [demo.js]: [Transaction Info] - Submitted: 1000 Succ: 810 Fail:0 Unfinished:190
+info: [demo.js]: [Transaction Info] - Submitted: 1000 Succ: 840 Fail:0 Unfinished:160
+info: [demo.js]: [Transaction Info] - Submitted: 1000 Succ: 890 Fail:0 Unfinished:110
+info: [demo.js]: [Transaction Info] - Submitted: 1000 Succ: 930 Fail:0 Unfinished:70
+info: [demo.js]: [Transaction Info] - Submitted: 1000 Succ: 960 Fail:0 Unfinished:40
+info: [demo.js]: [Transaction Info] - Submitted: 1000 Succ: 1000 Fail:0 Unfinished:0
+info: [bench-flow.js]: ###test result:###
+info: [bench-flow.js]: 
++------+------+------+-----------+-------------+-------------+-------------+------------+
+| Name | Succ | Fail | Send Rate | Max Latency | Min Latency | Avg Latency | Throughput |
+|------|------|------|-----------|-------------|-------------|-------------|------------|
+| init | 500  | 0    | 50.3 tps  | 7.14 s      | 0.47 s      | 4.72 s      | 29.5 tps   |
++------+------+------+-----------+-------------+-------------+-------------+------------+
+
+info: [bench-flow.js]: ### resource stats ###
+info: [bench-flow.js]: 
++---------+-----------------------------------+-------------+-------------+----------+----------+------------+-------------+-----------+------------+
+| TYPE    | NAME                              | Memory(max) | Memory(avg) | CPU(max) | CPU(avg) | Traffic In | Traffic Out | Disc Read | Disc Write |
+|---------|-----------------------------------|-------------|-------------|----------|----------|------------|-------------|-----------|------------|
+| Process | node local-client.js(avg)         | 134.5MB     | 134.3MB     | 7.23%    | 3.62%    | -          | -           | -         | -          |
+|---------|-----------------------------------|-------------|-------------|----------|----------|------------|-------------|-----------|------------|
+| Docker  | dev-peer0.org1.example.co...er-v1 | 6.5MB       | 6.4MB       | 4.82%    | 2.58%    | 820.6KB    | 371.5KB     | 0B        | 0B         |
+|---------|-----------------------------------|-------------|-------------|----------|----------|------------|-------------|-----------|------------|
+| Docker  | peer0.org1.example.com            | 102.4MB     | 101.2MB     | 24.26%   | 16.73%   | 2.6MB      | 1.7MB       | 0B        | 5.6MB      |
+|---------|-----------------------------------|-------------|-------------|----------|----------|------------|-------------|-----------|------------|
+| Docker  | orderer.example.com               | 16.8MB      | 16.2MB      | 8.48%    | 4.29%    | 1.7MB      | 1.8MB       | 0B        | 3.7MB      |
+|---------|-----------------------------------|-------------|-------------|----------|----------|------------|-------------|-----------|------------|
+| Docker  | ca.org1.example.com               | 8.0MB       | 8.0MB       | 0.00%    | 0.00%    | 0B         | 0B          | 0B        | 0B         |
++---------+-----------------------------------+-------------+-------------+----------+----------+------------+-------------+-----------+------------+
+
+info: [bench-flow.js]: ------ Passed 'init' testing ------
+info: [bench-flow.js]: Waiting 5 seconds for the next round...
+info: [demo.js]: [Transaction Info] - Submitted: 1000 Succ: 1000 Fail:0 Unfinished:0
+info: [demo.js]: [Transaction Info] - Submitted: 1000 Succ: 1000 Fail:0 Unfinished:0
+info: [demo.js]: [Transaction Info] - Submitted: 1000 Succ: 1000 Fail:0 Unfinished:0
+info: [demo.js]: [Transaction Info] - Submitted: 1000 Succ: 1000 Fail:0 Unfinished:0
+info: [demo.js]: [Transaction Info] - Submitted: 1000 Succ: 1000 Fail:0 Unfinished:0
+info: [bench-flow.js]: ------ Test round 3 ------
+info: [demo.js]: [Transaction Info] - Submitted: 1000 Succ: 1000 Fail:0 Unfinished:0
+info: [demo.js]: [Transaction Info] - Submitted: 1072 Succ: 1010 Fail:0 Unfinished:62
+info: [demo.js]: [Transaction Info] - Submitted: 1147 Succ: 1010 Fail:0 Unfinished:137
+info: [demo.js]: [Transaction Info] - Submitted: 1223 Succ: 1020 Fail:0 Unfinished:203
+info: [demo.js]: [Transaction Info] - Submitted: 1298 Succ: 1020 Fail:0 Unfinished:278
+info: [demo.js]: [Transaction Info] - Submitted: 1373 Succ: 1040 Fail:0 Unfinished:333
+info: [demo.js]: [Transaction Info] - Submitted: 1448 Succ: 1060 Fail:0 Unfinished:388
+info: [demo.js]: [Transaction Info] - Submitted: 1500 Succ: 1072 Fail:0 Unfinished:428
+info: [demo.js]: [Transaction Info] - Submitted: 1500 Succ: 1080 Fail:0 Unfinished:420
+info: [demo.js]: [Transaction Info] - Submitted: 1500 Succ: 1100 Fail:0 Unfinished:400
+info: [demo.js]: [Transaction Info] - Submitted: 1500 Succ: 1120 Fail:0 Unfinished:380
+info: [demo.js]: [Transaction Info] - Submitted: 1500 Succ: 1140 Fail:0 Unfinished:360
+info: [demo.js]: [Transaction Info] - Submitted: 1500 Succ: 1160 Fail:0 Unfinished:340
+info: [demo.js]: [Transaction Info] - Submitted: 1500 Succ: 1200 Fail:0 Unfinished:300
+info: [demo.js]: [Transaction Info] - Submitted: 1500 Succ: 1240 Fail:0 Unfinished:260
+info: [demo.js]: [Transaction Info] - Submitted: 1500 Succ: 1270 Fail:0 Unfinished:230
+info: [demo.js]: [Transaction Info] - Submitted: 1500 Succ: 1310 Fail:0 Unfinished:190
+info: [demo.js]: [Transaction Info] - Submitted: 1500 Succ: 1340 Fail:0 Unfinished:160
+info: [demo.js]: [Transaction Info] - Submitted: 1500 Succ: 1378 Fail:0 Unfinished:122
+info: [demo.js]: [Transaction Info] - Submitted: 1500 Succ: 1410 Fail:0 Unfinished:90
+info: [demo.js]: [Transaction Info] - Submitted: 1500 Succ: 1450 Fail:0 Unfinished:50
+info: [demo.js]: [Transaction Info] - Submitted: 1500 Succ: 1480 Fail:0 Unfinished:20
+info: [demo.js]: [Transaction Info] - Submitted: 1500 Succ: 1500 Fail:0 Unfinished:0
+info: [bench-flow.js]: ###test result:###
+info: [bench-flow.js]: 
++------+------+------+-----------+-------------+-------------+-------------+------------+
+| Name | Succ | Fail | Send Rate | Max Latency | Min Latency | Avg Latency | Throughput |
+|------|------|------|-----------|-------------|-------------|-------------|------------|
+| init | 500  | 0    | 75.2 tps  | 14.81 s     | 0.81 s      | 10.35 s     | 23.4 tps   |
++------+------+------+-----------+-------------+-------------+-------------+------------+
+
+info: [bench-flow.js]: ### resource stats ###
+info: [bench-flow.js]: 
++---------+-----------------------------------+-------------+-------------+----------+----------+------------+-------------+-----------+------------+
+| TYPE    | NAME                              | Memory(max) | Memory(avg) | CPU(max) | CPU(avg) | Traffic In | Traffic Out | Disc Read | Disc Write |
+|---------|-----------------------------------|-------------|-------------|----------|----------|------------|-------------|-----------|------------|
+| Process | node local-client.js(avg)         | 135.7MB     | 135.6MB     | 8.37%    | 2.46%    | -          | -           | -         | -          |
+|---------|-----------------------------------|-------------|-------------|----------|----------|------------|-------------|-----------|------------|
+| Docker  | dev-peer0.org1.example.co...er-v1 | 6.5MB       | 6.5MB       | 7.09%    | 1.96%    | 666.2KB    | 304.7KB     | 0B        | 0B         |
+|---------|-----------------------------------|-------------|-------------|----------|----------|------------|-------------|-----------|------------|
+| Docker  | peer0.org1.example.com            | 108.1MB     | 104.6MB     | 26.51%   | 13.19%   | 2.3MB      | 1.4MB       | 0B        | 5.6MB      |
+|---------|-----------------------------------|-------------|-------------|----------|----------|------------|-------------|-----------|------------|
+| Docker  | orderer.example.com               | 27.2MB      | 25.3MB      | 10.44%   | 3.96%    | 1.4MB      | 1.6MB       | 0B        | 3.4MB      |
+|---------|-----------------------------------|-------------|-------------|----------|----------|------------|-------------|-----------|------------|
+| Docker  | ca.org1.example.com               | 8.0MB       | 8.0MB       | 0.00%    | 0.00%    | 729B       | 0B          | 0B        | 0B         |
++---------+-----------------------------------+-------------+-------------+----------+----------+------------+-------------+-----------+------------+
+
+info: [bench-flow.js]: ------ Passed 'init' testing ------
+info: [bench-flow.js]: Waiting 5 seconds for the next round...
+info: [demo.js]: [Transaction Info] - Submitted: 1500 Succ: 1500 Fail:0 Unfinished:0
+info: [demo.js]: [Transaction Info] - Submitted: 1500 Succ: 1500 Fail:0 Unfinished:0
+info: [demo.js]: [Transaction Info] - Submitted: 1500 Succ: 1500 Fail:0 Unfinished:0
+info: [demo.js]: [Transaction Info] - Submitted: 1500 Succ: 1500 Fail:0 Unfinished:0
+info: [demo.js]: [Transaction Info] - Submitted: 1500 Succ: 1500 Fail:0 Unfinished:0
+info: [bench-flow.js]: ####### Testing 'query' #######
+info: [bench-flow.js]: ------ Test round 4 ------
+info: [demo.js]: [Transaction Info] - Submitted: 1500 Succ: 1500 Fail:0 Unfinished:0
+info: [demo.js]: [Transaction Info] - Submitted: 1505 Succ: 1505 Fail:0 Unfinished:0
+info: [demo.js]: [Transaction Info] - Submitted: 1510 Succ: 1510 Fail:0 Unfinished:0
+info: [demo.js]: [Transaction Info] - Submitted: 1515 Succ: 1515 Fail:0 Unfinished:0
+info: [bench-flow.js]: ###test result:###
+info: [bench-flow.js]: 
++-------+------+------+-----------+-------------+-------------+-------------+------------+
+| Name  | Succ | Fail | Send Rate | Max Latency | Min Latency | Avg Latency | Throughput |
+|-------|------|------|-----------|-------------|-------------|-------------|------------|
+| query | 15   | 0    | 6.8 tps   | 0.81 s      | 0.38 s      | 0.56 s      | 5.3 tps    |
++-------+------+------+-----------+-------------+-------------+-------------+------------+
+
+info: [bench-flow.js]: ### resource stats ###
+info: [bench-flow.js]: 
++---------+-----------------------------------+-------------+-------------+----------+----------+------------+-------------+-----------+------------+
+| TYPE    | NAME                              | Memory(max) | Memory(avg) | CPU(max) | CPU(avg) | Traffic In | Traffic Out | Disc Read | Disc Write |
+|---------|-----------------------------------|-------------|-------------|----------|----------|------------|-------------|-----------|------------|
+| Process | node local-client.js(avg)         | 135.7MB     | 124.9MB     | 1.52%    | 1.01%    | -          | -           | -         | -          |
+|---------|-----------------------------------|-------------|-------------|----------|----------|------------|-------------|-----------|------------|
+| Docker  | dev-peer0.org1.example.co...er-v1 | 6.5MB       | 6.5MB       | 0.43%    | 0.17%    | 25.1KB     | 11.5KB      | 0B        | 0B         |
+|---------|-----------------------------------|-------------|-------------|----------|----------|------------|-------------|-----------|------------|
+| Docker  | peer0.org1.example.com            | 108.1MB     | 108.0MB     | 6.80%    | 3.95%    | 102.3KB    | 188.7KB     | 0B        | 256.0KB    |
+|---------|-----------------------------------|-------------|-------------|----------|----------|------------|-------------|-----------|------------|
+| Docker  | orderer.example.com               | 27.2MB      | 27.2MB      | 1.03%    | 0.39%    | 52.4KB     | 60.5KB      | 0B        | 152.0KB    |
+|---------|-----------------------------------|-------------|-------------|----------|----------|------------|-------------|-----------|------------|
+| Docker  | ca.org1.example.com               | 8.0MB       | 8.0MB       | 0.00%    | 0.00%    | 0B         | 0B          | 0B        | 0B         |
++---------+-----------------------------------+-------------+-------------+----------+----------+------------+-------------+-----------+------------+
+
+info: [bench-flow.js]: ------ Passed 'query' testing ------
+info: [bench-flow.js]: Waiting 5 seconds for the next round...
+info: [demo.js]: [Transaction Info] - Submitted: 1515 Succ: 1515 Fail:0 Unfinished:0
+info: [demo.js]: [Transaction Info] - Submitted: 1515 Succ: 1515 Fail:0 Unfinished:0
+info: [demo.js]: [Transaction Info] - Submitted: 1515 Succ: 1515 Fail:0 Unfinished:0
+info: [demo.js]: [Transaction Info] - Submitted: 1515 Succ: 1515 Fail:0 Unfinished:0
+info: [demo.js]: [Transaction Info] - Submitted: 1515 Succ: 1515 Fail:0 Unfinished:0
+info: [bench-flow.js]: ------ Test round 5 ------
+info: [demo.js]: [Transaction Info] - Submitted: 1515 Succ: 1515 Fail:0 Unfinished:0
+info: [demo.js]: [Transaction Info] - Submitted: 1520 Succ: 1520 Fail:0 Unfinished:0
+info: [demo.js]: [Transaction Info] - Submitted: 1525 Succ: 1525 Fail:0 Unfinished:0
+info: [demo.js]: [Transaction Info] - Submitted: 1530 Succ: 1530 Fail:0 Unfinished:0
+info: [bench-flow.js]: ###test result:###
+info: [bench-flow.js]: 
++-------+------+------+-----------+-------------+-------------+-------------+------------+
+| Name  | Succ | Fail | Send Rate | Max Latency | Min Latency | Avg Latency | Throughput |
+|-------|------|------|-----------|-------------|-------------|-------------|------------|
+| query | 15   | 0    | 7.3 tps   | 0.80 s      | 0.55 s      | 0.70 s      | 5.4 tps    |
++-------+------+------+-----------+-------------+-------------+-------------+------------+
+
+info: [bench-flow.js]: ### resource stats ###
+info: [bench-flow.js]: 
++---------+-----------------------------------+-------------+-------------+----------+----------+------------+-------------+-----------+------------+
+| TYPE    | NAME                              | Memory(max) | Memory(avg) | CPU(max) | CPU(avg) | Traffic In | Traffic Out | Disc Read | Disc Write |
+|---------|-----------------------------------|-------------|-------------|----------|----------|------------|-------------|-----------|------------|
+| Process | node local-client.js(avg)         | 121.1MB     | 120.8MB     | 0.78%    | 0.42%    | -          | -           | -         | -          |
+|---------|-----------------------------------|-------------|-------------|----------|----------|------------|-------------|-----------|------------|
+| Docker  | dev-peer0.org1.example.co...er-v1 | 6.5MB       | 6.5MB       | 0.51%    | 0.48%    | 17.9KB     | 8.2KB       | 0B        | 0B         |
+|---------|-----------------------------------|-------------|-------------|----------|----------|------------|-------------|-----------|------------|
+| Docker  | peer0.org1.example.com            | 108.1MB     | 108.1MB     | 6.98%    | 6.10%    | 58.4KB     | 37.4KB      | 0B        | 168.0KB    |
+|---------|-----------------------------------|-------------|-------------|----------|----------|------------|-------------|-----------|------------|
+| Docker  | orderer.example.com               | 27.3MB      | 27.3MB      | 1.19%    | 1.13%    | 36.9KB     | 40.3KB      | 0B        | 104.0KB    |
+|---------|-----------------------------------|-------------|-------------|----------|----------|------------|-------------|-----------|------------|
+| Docker  | ca.org1.example.com               | 8.0MB       | 8.0MB       | 0.00%    | 0.00%    | 0B         | 0B          | 0B        | 0B         |
++---------+-----------------------------------+-------------+-------------+----------+----------+------------+-------------+-----------+------------+
+
+info: [bench-flow.js]: ------ Passed 'query' testing ------
+info: [bench-flow.js]: ---------- Finished Test ----------
+
+info: [bench-flow.js]: ###all test results:###
+info: [bench-flow.js]: 
++------+-------+------+------+-----------+-------------+-------------+-------------+------------+
+| Test | Name  | Succ | Fail | Send Rate | Max Latency | Min Latency | Avg Latency | Throughput |
+|------|-------|------|------|-----------|-------------|-------------|-------------|------------|
+| 1    | init  | 500  | 0    | 24.5 tps  | 3.90 s      | 0.58 s      | 2.40 s      | 21.1 tps   |
+|------|-------|------|------|-----------|-------------|-------------|-------------|------------|
+| 2    | init  | 500  | 0    | 50.3 tps  | 7.14 s      | 0.47 s      | 4.72 s      | 29.5 tps   |
+|------|-------|------|------|-----------|-------------|-------------|-------------|------------|
+| 3    | init  | 500  | 0    | 75.2 tps  | 14.81 s     | 0.81 s      | 10.35 s     | 23.4 tps   |
+|------|-------|------|------|-----------|-------------|-------------|-------------|------------|
+| 4    | query | 15   | 0    | 6.8 tps   | 0.81 s      | 0.38 s      | 0.56 s      | 5.3 tps    |
+|------|-------|------|------|-----------|-------------|-------------|-------------|------------|
+| 5    | query | 15   | 0    | 7.3 tps   | 0.80 s      | 0.55 s      | 0.70 s      | 5.4 tps    |
++------+-------+------+------+-----------+-------------+-------------+-------------+------------+
+
+info: [monitor.js]: 
+ ### resource stats (maximum) ###
+info: [monitor.js]: 
++---------+-----------------------------------+-------------+----------+------------+-------------+-----------+------------+
+| TYPE    | NAME                              | Memory(max) | CPU(max) | Traffic In | Traffic Out | Disc Read | Disc Write |
+|---------|-----------------------------------|-------------|----------|------------|-------------|-----------|------------|
+| Process | node local-client.js(avg)         | 135.7MB     | 35.57%   | -          | -           | -         | -          |
+|---------|-----------------------------------|-------------|----------|------------|-------------|-----------|------------|
+| Docker  | dev-peer0.org1.example.co...er-v1 | 6.5MB       | 7.09%    | 897.8KB    | 406.3KB     | 0B        | 0B         |
+|---------|-----------------------------------|-------------|----------|------------|-------------|-----------|------------|
+| Docker  | peer0.org1.example.com            | 108.1MB     | 26.51%   | 2.8MB      | 1.9MB       | 8.0KB     | 7.0MB      |
+|---------|-----------------------------------|-------------|----------|------------|-------------|-----------|------------|
+| Docker  | orderer.example.com               | 27.3MB      | 10.44%   | 1.8MB      | 1.9MB       | 0B        | 4.3MB      |
+|---------|-----------------------------------|-------------|----------|------------|-------------|-----------|------------|
+| Docker  | ca.org1.example.com               | 8.0MB       | 0.00%    | 893B       | 0B          | 0B        | 0B         |
++---------+-----------------------------------+-------------+----------+------------+-------------+-----------+------------+
+
+info: [demo.js]: [Transaction Info] - Submitted: 1530 Succ: 1530 Fail:0 Unfinished:0
+info: [bench-flow.js]: Generated report at /home/vinayak/Documents/go/src/github.com/hyperledger/caliper/report-20190401T163224.html
+info: [demo.js]: [Transaction Info] - Submitted: 1530 Succ: 1530 Fail:0 Unfinished:0
+info: [bench-flow.js]: Executing command: docker-compose -f network/fabric-v1.4/dev/docker-compose.yaml down;docker rm $(docker ps -aq);docker rmi $(docker images dev* -q)
+info: [client-util.js]: Client exited 
+info: [client-util.js]: Client exited 
+info: [client-util.js]: Client exited 
+info: [client-util.js]: Client exited 
+info: [client-util.js]: Client exited 
+3d242ca0c793
+Untagged: dev-peer0.org1.example.com-disaster-v1-7255a626dc7df4886305ae42dd28c6defa412a26d36035703dff693771760355:latest
+Deleted: sha256:5067d2922ea590fe6bdbec56f8baf4d65f2d2ac1ce7755d1e25c1d6c68a982ad
+Deleted: sha256:42aaf0498ee923d00f1cef0dd4a48118edd8a4d5dd6cb05f87707f469643e828
+Deleted: sha256:6ae9d9026e91948df2d72da85bd05052c772af65ba6031598709afa010f48fa5
+Deleted: sha256:139edfd0113caa5ab801d3b9151fc8616f0ccc6a605f5bc731ce42ccf90395f2
+info: [bench-flow.js]: 
+
+#######################################
+# Test summary: 5 succeeded, 0 failed #
+#######################################
+
+info: [scripts/main.js]: Benchmark run successfully
+
+> caliper@0.1.0 bench /home/vinayak/Documents/go/src/github.com/hyperledger/caliper
+> node ./scripts/main.js "-c" "benchmark/disaster/config.yaml" "-n" "network/fabric-v1.4/2org1peergoleveldb/fabric-go.json"
+
+info: [bench-flow.js]: ####### Caliper Test #######
+info: [bench-flow.js]: Executing command: docker-compose -f network/fabric-v1.4/2org1peergoleveldb/docker-compose.yaml up -d;sleep 3s
+info: [create-channel.js]: Creating mychannel...
+info: [create-channel.js]: Created mychannel successfully
+info: [create-channel.js]: Sleeping 5s...
+info: [join-channel.js]: Joining channels...
+info: [join-channel.js]: Joining organization org1 to channel mychannel...
+info: [join-channel.js]: Successfully joined peerOrg1's peers to mychannel
+info: [join-channel.js]: Joining organization org2 to channel mychannel...
+info: [join-channel.js]: Successfully joined peerOrg2's peers to mychannel
+info: [join-channel.js]: Successfully joined mychannel
+info: [install-chaincode.js]: installing all chaincodes......
+info: [install-chaincode.js]: Installing chaincode disaster...
+info: [install-chaincode.js]: Installing chaincode disaster...
+info: [install-chaincode.js]: Installed chaincode disaster successfully in all peers
+info: [instantiate-chaincode.js]: Instantiating chaincodes...
+info: [e2eUtils.js]: instantiate proposal was good
+info: [e2eUtils.js]: instantiate proposal was good
+info: [e2eUtils.js]: Successfully sent Proposal and received ProposalResponse
+info: [e2eUtils.js]: The chaincode instantiate transaction has been committed on peer localhost:8051
+info: [e2eUtils.js]: The chaincode instantiate transaction was valid.
+info: [e2eUtils.js]: The chaincode instantiate transaction has been committed on peer localhost:7051
+info: [e2eUtils.js]: The chaincode instantiate transaction was valid.
+info: [e2eUtils.js]: Successfully sent instantiatetransaction to the orderer.
+info: [instantiate-chaincode.js]: Instantiated chaincode disaster successfully
+info: [instantiate-chaincode.js]: Sleeping 5s...
+info: [bench-flow.js]: Started monitor successfully
+info: [bench-flow.js]: ####### Testing 'init' #######
+info: [bench-flow.js]: ------ Test round 1 ------
+info: [demo.js]: [Transaction Info] - Submitted: 0 Succ: 0 Fail:0 Unfinished:0
+info: [demo.js]: [Transaction Info] - Submitted: 0 Succ: 0 Fail:0 Unfinished:0
+info: [demo.js]: [Transaction Info] - Submitted: 0 Succ: 0 Fail:0 Unfinished:0
+info: [demo.js]: [Transaction Info] - Submitted: 0 Succ: 0 Fail:0 Unfinished:0
+info: [demo.js]: [Transaction Info] - Submitted: 0 Succ: 0 Fail:0 Unfinished:0
+info: [demo.js]: [Transaction Info] - Submitted: 8 Succ: 0 Fail:0 Unfinished:8
+info: [demo.js]: [Transaction Info] - Submitted: 32 Succ: 7 Fail:0 Unfinished:25
+info: [demo.js]: [Transaction Info] - Submitted: 57 Succ: 17 Fail:0 Unfinished:40
+info: [demo.js]: [Transaction Info] - Submitted: 82 Succ: 32 Fail:0 Unfinished:50
+info: [demo.js]: [Transaction Info] - Submitted: 107 Succ: 44 Fail:0 Unfinished:63
+info: [demo.js]: [Transaction Info] - Submitted: 132 Succ: 59 Fail:0 Unfinished:73
+info: [demo.js]: [Transaction Info] - Submitted: 157 Succ: 69 Fail:0 Unfinished:88
+info: [demo.js]: [Transaction Info] - Submitted: 182 Succ: 85 Fail:0 Unfinished:97
+info: [demo.js]: [Transaction Info] - Submitted: 207 Succ: 97 Fail:0 Unfinished:110
+info: [demo.js]: [Transaction Info] - Submitted: 232 Succ: 110 Fail:0 Unfinished:122
+info: [demo.js]: [Transaction Info] - Submitted: 257 Succ: 129 Fail:0 Unfinished:128
+info: [demo.js]: [Transaction Info] - Submitted: 282 Succ: 144 Fail:0 Unfinished:138
+info: [demo.js]: [Transaction Info] - Submitted: 307 Succ: 159 Fail:0 Unfinished:148
+info: [demo.js]: [Transaction Info] - Submitted: 332 Succ: 172 Fail:0 Unfinished:160
+info: [demo.js]: [Transaction Info] - Submitted: 357 Succ: 180 Fail:0 Unfinished:177
+info: [demo.js]: [Transaction Info] - Submitted: 382 Succ: 195 Fail:0 Unfinished:187
+info: [demo.js]: [Transaction Info] - Submitted: 407 Succ: 208 Fail:0 Unfinished:199
+info: [demo.js]: [Transaction Info] - Submitted: 432 Succ: 223 Fail:0 Unfinished:209
+info: [demo.js]: [Transaction Info] - Submitted: 457 Succ: 235 Fail:0 Unfinished:222
+info: [demo.js]: [Transaction Info] - Submitted: 482 Succ: 251 Fail:0 Unfinished:231
+info: [demo.js]: [Transaction Info] - Submitted: 499 Succ: 265 Fail:0 Unfinished:234
+info: [demo.js]: [Transaction Info] - Submitted: 500 Succ: 280 Fail:0 Unfinished:220
+info: [demo.js]: [Transaction Info] - Submitted: 500 Succ: 297 Fail:0 Unfinished:203
+info: [demo.js]: [Transaction Info] - Submitted: 500 Succ: 313 Fail:0 Unfinished:187
+info: [demo.js]: [Transaction Info] - Submitted: 500 Succ: 327 Fail:0 Unfinished:173
+info: [demo.js]: [Transaction Info] - Submitted: 500 Succ: 342 Fail:0 Unfinished:158
+info: [demo.js]: [Transaction Info] - Submitted: 500 Succ: 356 Fail:0 Unfinished:144
+info: [demo.js]: [Transaction Info] - Submitted: 500 Succ: 362 Fail:0 Unfinished:138
+info: [demo.js]: [Transaction Info] - Submitted: 500 Succ: 372 Fail:0 Unfinished:128
+info: [demo.js]: [Transaction Info] - Submitted: 500 Succ: 388 Fail:0 Unfinished:112
+info: [demo.js]: [Transaction Info] - Submitted: 500 Succ: 403 Fail:0 Unfinished:97
+info: [demo.js]: [Transaction Info] - Submitted: 500 Succ: 413 Fail:0 Unfinished:87
+info: [demo.js]: [Transaction Info] - Submitted: 500 Succ: 430 Fail:0 Unfinished:70
+info: [demo.js]: [Transaction Info] - Submitted: 500 Succ: 446 Fail:0 Unfinished:54
+info: [demo.js]: [Transaction Info] - Submitted: 500 Succ: 461 Fail:0 Unfinished:39
+info: [demo.js]: [Transaction Info] - Submitted: 500 Succ: 476 Fail:0 Unfinished:24
+info: [demo.js]: [Transaction Info] - Submitted: 500 Succ: 494 Fail:0 Unfinished:6
+info: [demo.js]: [Transaction Info] - Submitted: 500 Succ: 500 Fail:0 Unfinished:0
+info: [bench-flow.js]: ###test result:###
+info: [bench-flow.js]: 
++------+------+------+-----------+-------------+-------------+-------------+------------+
+| Name | Succ | Fail | Send Rate | Max Latency | Min Latency | Avg Latency | Throughput |
+|------|------|------|-----------|-------------|-------------|-------------|------------|
+| init | 500  | 0    | 24.7 tps  | 17.29 s     | 0.84 s      | 9.21 s      | 13.4 tps   |
++------+------+------+-----------+-------------+-------------+-------------+------------+
+
+info: [bench-flow.js]: ### resource stats ###
+info: [bench-flow.js]: 
++---------+-----------------------------------+-------------+-------------+----------+----------+------------+-------------+-----------+------------+
+| TYPE    | NAME                              | Memory(max) | Memory(avg) | CPU(max) | CPU(avg) | Traffic In | Traffic Out | Disc Read | Disc Write |
+|---------|-----------------------------------|-------------|-------------|----------|----------|------------|-------------|-----------|------------|
+| Process | node local-client.js(avg)         | 133.1MB     | 130.5MB     | 59.71%   | 9.36%    | -          | -           | -         | -          |
+|---------|-----------------------------------|-------------|-------------|----------|----------|------------|-------------|-----------|------------|
+| Docker  | dev-peer0.org1.example.co...er-v1 | 6.2MB       | 5.5MB       | 2.64%    | 1.09%    | 882.1KB    | 403.8KB     | 0B        | 0B         |
+|---------|-----------------------------------|-------------|-------------|----------|----------|------------|-------------|-----------|------------|
+| Docker  | dev-peer0.org2.example.co...er-v1 | 6.1MB       | 5.4MB       | 2.65%    | 1.06%    | 876.4KB    | 399.4KB     | 0B        | 0B         |
+|---------|-----------------------------------|-------------|-------------|----------|----------|------------|-------------|-----------|------------|
+| Docker  | peer0.org2.example.com            | 114.9MB     | 113.2MB     | 13.66%   | 8.08%    | 3.2MB      | 1.7MB       | 0B        | 7.5MB      |
+|---------|-----------------------------------|-------------|-------------|----------|----------|------------|-------------|-----------|------------|
+| Docker  | peer0.org1.example.com            | 137.1MB     | 135.3MB     | 13.04%   | 7.77%    | 3.2MB      | 1.8MB       | 0B        | 7.5MB      |
+|---------|-----------------------------------|-------------|-------------|----------|----------|------------|-------------|-----------|------------|
+| Docker  | ca.org1.example.com               | 8.0MB       | 8.0MB       | 0.25%    | 0.01%    | 441B       | 0B          | 0B        | 0B         |
+|---------|-----------------------------------|-------------|-------------|----------|----------|------------|-------------|-----------|------------|
+| Docker  | orderer.example.com               | 38.0MB      | 36.6MB      | 5.63%    | 2.32%    | 2.2MB      | 4.3MB       | 432.0KB   | 5.0MB      |
+|---------|-----------------------------------|-------------|-------------|----------|----------|------------|-------------|-----------|------------|
+| Docker  | ca.org2.example.com               | 24.6MB      | 24.6MB      | 0.23%    | 0.01%    | 441B       | 0B          | 136.0KB   | 0B         |
++---------+-----------------------------------+-------------+-------------+----------+----------+------------+-------------+-----------+------------+
+
+info: [bench-flow.js]: ------ Passed 'init' testing ------
+info: [bench-flow.js]: Waiting 5 seconds for the next round...
+info: [demo.js]: [Transaction Info] - Submitted: 500 Succ: 500 Fail:0 Unfinished:0
+info: [demo.js]: [Transaction Info] - Submitted: 500 Succ: 500 Fail:0 Unfinished:0
+info: [demo.js]: [Transaction Info] - Submitted: 500 Succ: 500 Fail:0 Unfinished:0
+info: [demo.js]: [Transaction Info] - Submitted: 500 Succ: 500 Fail:0 Unfinished:0
+info: [demo.js]: [Transaction Info] - Submitted: 500 Succ: 500 Fail:0 Unfinished:0
+info: [bench-flow.js]: ------ Test round 2 ------
+info: [demo.js]: [Transaction Info] - Submitted: 500 Succ: 500 Fail:0 Unfinished:0
+info: [demo.js]: [Transaction Info] - Submitted: 544 Succ: 509 Fail:0 Unfinished:35
+info: [demo.js]: [Transaction Info] - Submitted: 594 Succ: 519 Fail:0 Unfinished:75
+info: [demo.js]: [Transaction Info] - Submitted: 644 Succ: 539 Fail:0 Unfinished:105
+info: [demo.js]: [Transaction Info] - Submitted: 694 Succ: 549 Fail:0 Unfinished:145
+info: [demo.js]: [Transaction Info] - Submitted: 744 Succ: 569 Fail:0 Unfinished:175
+info: [demo.js]: [Transaction Info] - Submitted: 794 Succ: 579 Fail:0 Unfinished:215
+info: [demo.js]: [Transaction Info] - Submitted: 844 Succ: 599 Fail:0 Unfinished:245
+info: [demo.js]: [Transaction Info] - Submitted: 894 Succ: 619 Fail:0 Unfinished:275
+info: [demo.js]: [Transaction Info] - Submitted: 944 Succ: 629 Fail:0 Unfinished:315
+info: [demo.js]: [Transaction Info] - Submitted: 994 Succ: 641 Fail:0 Unfinished:353
+info: [demo.js]: [Transaction Info] - Submitted: 1000 Succ: 659 Fail:0 Unfinished:341
+info: [demo.js]: [Transaction Info] - Submitted: 1000 Succ: 679 Fail:0 Unfinished:321
+info: [demo.js]: [Transaction Info] - Submitted: 1000 Succ: 699 Fail:0 Unfinished:301
+info: [demo.js]: [Transaction Info] - Submitted: 1000 Succ: 709 Fail:0 Unfinished:291
+info: [demo.js]: [Transaction Info] - Submitted: 1000 Succ: 729 Fail:0 Unfinished:271
+info: [demo.js]: [Transaction Info] - Submitted: 1000 Succ: 749 Fail:0 Unfinished:251
+info: [demo.js]: [Transaction Info] - Submitted: 1000 Succ: 769 Fail:0 Unfinished:231
+info: [demo.js]: [Transaction Info] - Submitted: 1000 Succ: 779 Fail:0 Unfinished:221
+info: [demo.js]: [Transaction Info] - Submitted: 1000 Succ: 799 Fail:0 Unfinished:201
+info: [demo.js]: [Transaction Info] - Submitted: 1000 Succ: 819 Fail:0 Unfinished:181
+info: [demo.js]: [Transaction Info] - Submitted: 1000 Succ: 829 Fail:0 Unfinished:171
+info: [demo.js]: [Transaction Info] - Submitted: 1000 Succ: 839 Fail:0 Unfinished:161
+info: [demo.js]: [Transaction Info] - Submitted: 1000 Succ: 851 Fail:0 Unfinished:149
+info: [demo.js]: [Transaction Info] - Submitted: 1000 Succ: 869 Fail:0 Unfinished:131
+info: [demo.js]: [Transaction Info] - Submitted: 1000 Succ: 889 Fail:0 Unfinished:111
+info: [demo.js]: [Transaction Info] - Submitted: 1000 Succ: 909 Fail:0 Unfinished:91
+info: [demo.js]: [Transaction Info] - Submitted: 1000 Succ: 929 Fail:0 Unfinished:71
+info: [demo.js]: [Transaction Info] - Submitted: 1000 Succ: 949 Fail:0 Unfinished:51
+info: [demo.js]: [Transaction Info] - Submitted: 1000 Succ: 959 Fail:0 Unfinished:41
+info: [demo.js]: [Transaction Info] - Submitted: 1000 Succ: 969 Fail:0 Unfinished:31
+info: [demo.js]: [Transaction Info] - Submitted: 1000 Succ: 989 Fail:0 Unfinished:11
+info: [demo.js]: [Transaction Info] - Submitted: 1000 Succ: 1000 Fail:0 Unfinished:0
+info: [bench-flow.js]: ###test result:###
+info: [bench-flow.js]: 
++------+------+------+-----------+-------------+-------------+-------------+------------+
+| Name | Succ | Fail | Send Rate | Max Latency | Min Latency | Avg Latency | Throughput |
+|------|------|------|-----------|-------------|-------------|-------------|------------|
+| init | 500  | 0    | 49.4 tps  | 21.73 s     | 0.66 s      | 11.18 s     | 15.7 tps   |
++------+------+------+-----------+-------------+-------------+-------------+------------+
+
+info: [bench-flow.js]: ### resource stats ###
+info: [bench-flow.js]: 
++---------+-----------------------------------+-------------+-------------+----------+----------+------------+-------------+-----------+------------+
+| TYPE    | NAME                              | Memory(max) | Memory(avg) | CPU(max) | CPU(avg) | Traffic In | Traffic Out | Disc Read | Disc Write |
+|---------|-----------------------------------|-------------|-------------|----------|----------|------------|-------------|-----------|------------|
+| Process | node local-client.js(avg)         | 125.3MB     | 123.7MB     | 14.95%   | 4.19%    | -          | -           | -         | -          |
+|---------|-----------------------------------|-------------|-------------|----------|----------|------------|-------------|-----------|------------|
+| Docker  | dev-peer0.org1.example.co...er-v1 | 6.4MB       | 6.4MB       | 4.29%    | 1.23%    | 726.4KB    | 331.0KB     | 0B        | 0B         |
+|---------|-----------------------------------|-------------|-------------|----------|----------|------------|-------------|-----------|------------|
+| Docker  | dev-peer0.org2.example.co...er-v1 | 6.3MB       | 6.3MB       | 4.21%    | 1.23%    | 724.8KB    | 328.4KB     | 0B        | 0B         |
+|---------|-----------------------------------|-------------|-------------|----------|----------|------------|-------------|-----------|------------|
+| Docker  | peer0.org2.example.com            | 117.5MB     | 116.4MB     | 18.54%   | 9.12%    | 2.8MB      | 1.3MB       | 32.0KB    | 6.4MB      |
+|---------|-----------------------------------|-------------|-------------|----------|----------|------------|-------------|-----------|------------|
+| Docker  | peer0.org1.example.com            | 139.5MB     | 138.4MB     | 18.72%   | 8.96%    | 2.8MB      | 1.5MB       | 0B        | 6.4MB      |
+|---------|-----------------------------------|-------------|-------------|----------|----------|------------|-------------|-----------|------------|
+| Docker  | ca.org1.example.com               | 8.0MB       | 8.0MB       | 0.00%    | 0.00%    | 0B         | 0B          | 0B        | 0B         |
+|---------|-----------------------------------|-------------|-------------|----------|----------|------------|-------------|-----------|------------|
+| Docker  | orderer.example.com               | 41.7MB      | 41.1MB      | 8.62%    | 2.49%    | 1.9MB      | 3.8MB       | 0B        | 4.2MB      |
+|---------|-----------------------------------|-------------|-------------|----------|----------|------------|-------------|-----------|------------|
+| Docker  | ca.org2.example.com               | 24.6MB      | 24.6MB      | 0.00%    | 0.00%    | 0B         | 0B          | 0B        | 0B         |
++---------+-----------------------------------+-------------+-------------+----------+----------+------------+-------------+-----------+------------+
+
+info: [bench-flow.js]: ------ Passed 'init' testing ------
+info: [bench-flow.js]: Waiting 5 seconds for the next round...
+info: [demo.js]: [Transaction Info] - Submitted: 1000 Succ: 1000 Fail:0 Unfinished:0
+info: [demo.js]: [Transaction Info] - Submitted: 1000 Succ: 1000 Fail:0 Unfinished:0
+info: [demo.js]: [Transaction Info] - Submitted: 1000 Succ: 1000 Fail:0 Unfinished:0
+info: [demo.js]: [Transaction Info] - Submitted: 1000 Succ: 1000 Fail:0 Unfinished:0
+info: [demo.js]: [Transaction Info] - Submitted: 1000 Succ: 1000 Fail:0 Unfinished:0
+info: [bench-flow.js]: ------ Test round 3 ------
+info: [demo.js]: [Transaction Info] - Submitted: 1000 Succ: 1000 Fail:0 Unfinished:0
+info: [demo.js]: [Transaction Info] - Submitted: 1072 Succ: 1000 Fail:0 Unfinished:72
+info: [demo.js]: [Transaction Info] - Submitted: 1148 Succ: 1020 Fail:0 Unfinished:128
+info: [demo.js]: [Transaction Info] - Submitted: 1223 Succ: 1040 Fail:0 Unfinished:183
+info: [demo.js]: [Transaction Info] - Submitted: 1298 Succ: 1048 Fail:0 Unfinished:250
+info: [demo.js]: [Transaction Info] - Submitted: 1373 Succ: 1068 Fail:0 Unfinished:305
+info: [demo.js]: [Transaction Info] - Submitted: 1448 Succ: 1078 Fail:0 Unfinished:370
+info: [demo.js]: [Transaction Info] - Submitted: 1500 Succ: 1091 Fail:0 Unfinished:409
+info: [demo.js]: [Transaction Info] - Submitted: 1500 Succ: 1108 Fail:0 Unfinished:392
+info: [demo.js]: [Transaction Info] - Submitted: 1500 Succ: 1128 Fail:0 Unfinished:372
+info: [demo.js]: [Transaction Info] - Submitted: 1500 Succ: 1138 Fail:0 Unfinished:362
+info: [demo.js]: [Transaction Info] - Submitted: 1500 Succ: 1158 Fail:0 Unfinished:342
+info: [demo.js]: [Transaction Info] - Submitted: 1500 Succ: 1178 Fail:0 Unfinished:322
+info: [demo.js]: [Transaction Info] - Submitted: 1500 Succ: 1198 Fail:0 Unfinished:302
+info: [demo.js]: [Transaction Info] - Submitted: 1500 Succ: 1212 Fail:0 Unfinished:288
+info: [demo.js]: [Transaction Info] - Submitted: 1500 Succ: 1228 Fail:0 Unfinished:272
+info: [demo.js]: [Transaction Info] - Submitted: 1500 Succ: 1248 Fail:0 Unfinished:252
+info: [demo.js]: [Transaction Info] - Submitted: 1500 Succ: 1268 Fail:0 Unfinished:232
+info: [demo.js]: [Transaction Info] - Submitted: 1500 Succ: 1288 Fail:0 Unfinished:212
+info: [demo.js]: [Transaction Info] - Submitted: 1500 Succ: 1308 Fail:0 Unfinished:192
+info: [demo.js]: [Transaction Info] - Submitted: 1500 Succ: 1322 Fail:0 Unfinished:178
+info: [demo.js]: [Transaction Info] - Submitted: 1500 Succ: 1338 Fail:0 Unfinished:162
+info: [demo.js]: [Transaction Info] - Submitted: 1500 Succ: 1358 Fail:0 Unfinished:142
+info: [demo.js]: [Transaction Info] - Submitted: 1500 Succ: 1378 Fail:0 Unfinished:122
+info: [demo.js]: [Transaction Info] - Submitted: 1500 Succ: 1396 Fail:0 Unfinished:104
+info: [demo.js]: [Transaction Info] - Submitted: 1500 Succ: 1410 Fail:0 Unfinished:90
+info: [demo.js]: [Transaction Info] - Submitted: 1500 Succ: 1428 Fail:0 Unfinished:72
+info: [demo.js]: [Transaction Info] - Submitted: 1500 Succ: 1448 Fail:0 Unfinished:52
+info: [demo.js]: [Transaction Info] - Submitted: 1500 Succ: 1468 Fail:0 Unfinished:32
+info: [demo.js]: [Transaction Info] - Submitted: 1500 Succ: 1488 Fail:0 Unfinished:12
+info: [demo.js]: [Transaction Info] - Submitted: 1500 Succ: 1500 Fail:0 Unfinished:0
+info: [bench-flow.js]: ###test result:###
+info: [bench-flow.js]: 
++------+------+------+-----------+-------------+-------------+-------------+------------+
+| Name | Succ | Fail | Send Rate | Max Latency | Min Latency | Avg Latency | Throughput |
+|------|------|------|-----------|-------------|-------------|-------------|------------|
+| init | 500  | 0    | 74.9 tps  | 23.46 s     | 0.85 s      | 12.49 s     | 16.7 tps   |
++------+------+------+-----------+-------------+-------------+-------------+------------+
+
+info: [bench-flow.js]: ### resource stats ###
+info: [bench-flow.js]: 
++---------+-----------------------------------+-------------+-------------+----------+----------+------------+-------------+-----------+------------+
+| TYPE    | NAME                              | Memory(max) | Memory(avg) | CPU(max) | CPU(avg) | Traffic In | Traffic Out | Disc Read | Disc Write |
+|---------|-----------------------------------|-------------|-------------|----------|----------|------------|-------------|-----------|------------|
+| Process | node local-client.js(avg)         | 114.2MB     | 106.7MB     | 22.32%   | 4.93%    | -          | -           | -         | -          |
+|---------|-----------------------------------|-------------|-------------|----------|----------|------------|-------------|-----------|------------|
+| Docker  | dev-peer0.org1.example.co...er-v1 | 6.5MB       | 6.4MB       | 5.97%    | 0.76%    | 830.2KB    | 376.5KB     | 0B        | 0B         |
+|---------|-----------------------------------|-------------|-------------|----------|----------|------------|-------------|-----------|------------|
+| Docker  | dev-peer0.org2.example.co...er-v1 | 6.4MB       | 6.4MB       | 5.80%    | 0.77%    | 841.2KB    | 384.9KB     | 0B        | 0B         |
+|---------|-----------------------------------|-------------|-------------|----------|----------|------------|-------------|-----------|------------|
+| Docker  | peer0.org2.example.com            | 119.8MB     | 118.8MB     | 25.59%   | 7.91%    | 3.1MB      | 1.6MB       | 0B        | 6.7MB      |
+|---------|-----------------------------------|-------------|-------------|----------|----------|------------|-------------|-----------|------------|
+| Docker  | peer0.org1.example.com            | 141.9MB     | 140.8MB     | 24.43%   | 8.02%    | 3.1MB      | 1.8MB       | 0B        | 6.7MB      |
+|---------|-----------------------------------|-------------|-------------|----------|----------|------------|-------------|-----------|------------|
+| Docker  | ca.org1.example.com               | 8.0MB       | 8.0MB       | 0.00%    | 0.00%    | 0B         | 0B          | 0B        | 0B         |
+|---------|-----------------------------------|-------------|-------------|----------|----------|------------|-------------|-----------|------------|
+| Docker  | orderer.example.com               | 50.5MB      | 49.1MB      | 10.57%   | 1.94%    | 2.2MB      | 4.2MB       | 0B        | 4.8MB      |
+|---------|-----------------------------------|-------------|-------------|----------|----------|------------|-------------|-----------|------------|
+| Docker  | ca.org2.example.com               | 24.6MB      | 24.6MB      | 0.00%    | 0.00%    | 0B         | 0B          | 0B        | 0B         |
++---------+-----------------------------------+-------------+-------------+----------+----------+------------+-------------+-----------+------------+
+
+info: [bench-flow.js]: ------ Passed 'init' testing ------
+info: [bench-flow.js]: Waiting 5 seconds for the next round...
+info: [demo.js]: [Transaction Info] - Submitted: 1500 Succ: 1500 Fail:0 Unfinished:0
+info: [demo.js]: [Transaction Info] - Submitted: 1500 Succ: 1500 Fail:0 Unfinished:0
+info: [demo.js]: [Transaction Info] - Submitted: 1500 Succ: 1500 Fail:0 Unfinished:0
+info: [demo.js]: [Transaction Info] - Submitted: 1500 Succ: 1500 Fail:0 Unfinished:0
+info: [demo.js]: [Transaction Info] - Submitted: 1500 Succ: 1500 Fail:0 Unfinished:0
+info: [bench-flow.js]: ####### Testing 'query' #######
+info: [bench-flow.js]: ------ Test round 4 ------
+info: [demo.js]: [Transaction Info] - Submitted: 1500 Succ: 1500 Fail:0 Unfinished:0
+info: [demo.js]: [Transaction Info] - Submitted: 1505 Succ: 1505 Fail:0 Unfinished:0
+info: [demo.js]: [Transaction Info] - Submitted: 1510 Succ: 1505 Fail:0 Unfinished:5
+info: [demo.js]: [Transaction Info] - Submitted: 1515 Succ: 1515 Fail:0 Unfinished:0
+info: [bench-flow.js]: ###test result:###
+info: [bench-flow.js]: 
++-------+------+------+-----------+-------------+-------------+-------------+------------+
+| Name  | Succ | Fail | Send Rate | Max Latency | Min Latency | Avg Latency | Throughput |
+|-------|------|------|-----------|-------------|-------------|-------------|------------|
+| query | 15   | 0    | 6.8 tps   | 0.99 s      | 0.63 s      | 0.78 s      | 5.3 tps    |
++-------+------+------+-----------+-------------+-------------+-------------+------------+
+
+info: [bench-flow.js]: ### resource stats ###
+info: [bench-flow.js]: 
++---------+-----------------------------------+-------------+-------------+----------+----------+------------+-------------+-----------+------------+
+| TYPE    | NAME                              | Memory(max) | Memory(avg) | CPU(max) | CPU(avg) | Traffic In | Traffic Out | Disc Read | Disc Write |
+|---------|-----------------------------------|-------------|-------------|----------|----------|------------|-------------|-----------|------------|
+| Process | node local-client.js(avg)         | 89.3MB      | 89.2MB      | 4.27%    | 2.11%    | -          | -           | -         | -          |
+|---------|-----------------------------------|-------------|-------------|----------|----------|------------|-------------|-----------|------------|
+| Docker  | dev-peer0.org1.example.co...er-v1 | 6.5MB       | 6.5MB       | 0.41%    | 0.21%    | 23.5KB     | 10.9KB      | 0B        | 0B         |
+|---------|-----------------------------------|-------------|-------------|----------|----------|------------|-------------|-----------|------------|
+| Docker  | dev-peer0.org2.example.co...er-v1 | 6.4MB       | 6.4MB       | 0.40%    | 0.20%    | 23.7KB     | 11.1KB      | 0B        | 0B         |
+|---------|-----------------------------------|-------------|-------------|----------|----------|------------|-------------|-----------|------------|
+| Docker  | peer0.org2.example.com            | 119.9MB     | 119.9MB     | 4.95%    | 3.22%    | 98.6KB     | 47.6KB      | 0B        | 288.0KB    |
+|---------|-----------------------------------|-------------|-------------|----------|----------|------------|-------------|-----------|------------|
+| Docker  | peer0.org1.example.com            | 142.0MB     | 141.9MB     | 5.07%    | 3.47%    | 105.1KB    | 152.7KB     | 0B        | 288.0KB    |
+|---------|-----------------------------------|-------------|-------------|----------|----------|------------|-------------|-----------|------------|
+| Docker  | ca.org1.example.com               | 8.0MB       | 8.0MB       | 0.00%    | 0.00%    | 0B         | 0B          | 0B        | 0B         |
+|---------|-----------------------------------|-------------|-------------|----------|----------|------------|-------------|-----------|------------|
+| Docker  | orderer.example.com               | 50.6MB      | 50.6MB      | 1.10%    | 0.65%    | 62.1KB     | 137.6KB     | 0B        | 168.0KB    |
+|---------|-----------------------------------|-------------|-------------|----------|----------|------------|-------------|-----------|------------|
+| Docker  | ca.org2.example.com               | 24.6MB      | 24.6MB      | 0.00%    | 0.00%    | 0B         | 0B          | 0B        | 0B         |
++---------+-----------------------------------+-------------+-------------+----------+----------+------------+-------------+-----------+------------+
+
+info: [bench-flow.js]: ------ Passed 'query' testing ------
+info: [bench-flow.js]: Waiting 5 seconds for the next round...
+info: [demo.js]: [Transaction Info] - Submitted: 1515 Succ: 1515 Fail:0 Unfinished:0
+info: [demo.js]: [Transaction Info] - Submitted: 1515 Succ: 1515 Fail:0 Unfinished:0
+info: [demo.js]: [Transaction Info] - Submitted: 1515 Succ: 1515 Fail:0 Unfinished:0
+info: [demo.js]: [Transaction Info] - Submitted: 1515 Succ: 1515 Fail:0 Unfinished:0
+info: [demo.js]: [Transaction Info] - Submitted: 1515 Succ: 1515 Fail:0 Unfinished:0
+info: [bench-flow.js]: ------ Test round 5 ------
+info: [demo.js]: [Transaction Info] - Submitted: 1515 Succ: 1515 Fail:0 Unfinished:0
+info: [demo.js]: [Transaction Info] - Submitted: 1520 Succ: 1520 Fail:0 Unfinished:0
+info: [demo.js]: [Transaction Info] - Submitted: 1525 Succ: 1525 Fail:0 Unfinished:0
+info: [demo.js]: [Transaction Info] - Submitted: 1530 Succ: 1525 Fail:0 Unfinished:5
+info: [demo.js]: [Transaction Info] - Submitted: 1530 Succ: 1530 Fail:0 Unfinished:0
+info: [bench-flow.js]: ###test result:###
+info: [bench-flow.js]: 
++-------+------+------+-----------+-------------+-------------+-------------+------------+
+| Name  | Succ | Fail | Send Rate | Max Latency | Min Latency | Avg Latency | Throughput |
+|-------|------|------|-----------|-------------|-------------|-------------|------------|
+| query | 15   | 0    | 6.9 tps   | 0.98 s      | 0.60 s      | 0.75 s      | 5.0 tps    |
++-------+------+------+-----------+-------------+-------------+-------------+------------+
+
+info: [bench-flow.js]: ### resource stats ###
+info: [bench-flow.js]: 
++---------+-----------------------------------+-------------+-------------+----------+----------+------------+-------------+-----------+------------+
+| TYPE    | NAME                              | Memory(max) | Memory(avg) | CPU(max) | CPU(avg) | Traffic In | Traffic Out | Disc Read | Disc Write |
+|---------|-----------------------------------|-------------|-------------|----------|----------|------------|-------------|-----------|------------|
+| Process | node local-client.js(avg)         | 93.6MB      | 92.3MB      | 4.89%    | 2.05%    | -          | -           | -         | -          |
+|---------|-----------------------------------|-------------|-------------|----------|----------|------------|-------------|-----------|------------|
+| Docker  | dev-peer0.org1.example.co...er-v1 | 6.5MB       | 6.5MB       | 0.41%    | 0.40%    | 17.9KB     | 8.1KB       | 0B        | 0B         |
+|---------|-----------------------------------|-------------|-------------|----------|----------|------------|-------------|-----------|------------|
+| Docker  | dev-peer0.org2.example.co...er-v1 | 6.4MB       | 6.4MB       | 0.47%    | 0.43%    | 17.6KB     | 8.0KB       | 0B        | 0B         |
+|---------|-----------------------------------|-------------|-------------|----------|----------|------------|-------------|-----------|------------|
+| Docker  | peer0.org2.example.com            | 120.0MB     | 120.0MB     | 4.59%    | 4.56%    | 66.5KB     | 35.3KB      | 0B        | 176.0KB    |
+|---------|-----------------------------------|-------------|-------------|----------|----------|------------|-------------|-----------|------------|
+| Docker  | peer0.org1.example.com            | 142.0MB     | 142.0MB     | 5.58%    | 5.28%    | 66.4KB     | 34.5KB      | 0B        | 176.0KB    |
+|---------|-----------------------------------|-------------|-------------|----------|----------|------------|-------------|-----------|------------|
+| Docker  | ca.org1.example.com               | 8.0MB       | 8.0MB       | 0.00%    | 0.00%    | 0B         | 0B          | 0B        | 0B         |
+|---------|-----------------------------------|-------------|-------------|----------|----------|------------|-------------|-----------|------------|
+| Docker  | orderer.example.com               | 50.6MB      | 50.6MB      | 1.29%    | 1.17%    | 46.5KB     | 92.0KB      | 0B        | 112.0KB    |
+|---------|-----------------------------------|-------------|-------------|----------|----------|------------|-------------|-----------|------------|
+| Docker  | ca.org2.example.com               | 24.6MB      | 24.6MB      | 0.00%    | 0.00%    | 0B         | 0B          | 0B        | 0B         |
++---------+-----------------------------------+-------------+-------------+----------+----------+------------+-------------+-----------+------------+
+
+info: [bench-flow.js]: ------ Passed 'query' testing ------
+info: [bench-flow.js]: ---------- Finished Test ----------
+
+info: [bench-flow.js]: ###all test results:###
+info: [bench-flow.js]: 
++------+-------+------+------+-----------+-------------+-------------+-------------+------------+
+| Test | Name  | Succ | Fail | Send Rate | Max Latency | Min Latency | Avg Latency | Throughput |
+|------|-------|------|------|-----------|-------------|-------------|-------------|------------|
+| 1    | init  | 500  | 0    | 24.7 tps  | 17.29 s     | 0.84 s      | 9.21 s      | 13.4 tps   |
+|------|-------|------|------|-----------|-------------|-------------|-------------|------------|
+| 2    | init  | 500  | 0    | 49.4 tps  | 21.73 s     | 0.66 s      | 11.18 s     | 15.7 tps   |
+|------|-------|------|------|-----------|-------------|-------------|-------------|------------|
+| 3    | init  | 500  | 0    | 74.9 tps  | 23.46 s     | 0.85 s      | 12.49 s     | 16.7 tps   |
+|------|-------|------|------|-----------|-------------|-------------|-------------|------------|
+| 4    | query | 15   | 0    | 6.8 tps   | 0.99 s      | 0.63 s      | 0.78 s      | 5.3 tps    |
+|------|-------|------|------|-----------|-------------|-------------|-------------|------------|
+| 5    | query | 15   | 0    | 6.9 tps   | 0.98 s      | 0.60 s      | 0.75 s      | 5.0 tps    |
++------+-------+------+------+-----------+-------------+-------------+-------------+------------+
+
+info: [monitor.js]: 
+ ### resource stats (maximum) ###
+info: [monitor.js]: 
++---------+-----------------------------------+-------------+----------+------------+-------------+-----------+------------+
+| TYPE    | NAME                              | Memory(max) | CPU(max) | Traffic In | Traffic Out | Disc Read | Disc Write |
+|---------|-----------------------------------|-------------|----------|------------|-------------|-----------|------------|
+| Process | node local-client.js(avg)         | 133.1MB     | 59.71%   | -          | -           | -         | -          |
+|---------|-----------------------------------|-------------|----------|------------|-------------|-----------|------------|
+| Docker  | dev-peer0.org1.example.co...er-v1 | 6.5MB       | 5.97%    | 882.1KB    | 403.8KB     | 0B        | 0B         |
+|---------|-----------------------------------|-------------|----------|------------|-------------|-----------|------------|
+| Docker  | dev-peer0.org2.example.co...er-v1 | 6.4MB       | 5.80%    | 876.4KB    | 399.4KB     | 0B        | 0B         |
+|---------|-----------------------------------|-------------|----------|------------|-------------|-----------|------------|
+| Docker  | peer0.org2.example.com            | 120.0MB     | 25.59%   | 3.2MB      | 1.7MB       | 32.0KB    | 7.5MB      |
+|---------|-----------------------------------|-------------|----------|------------|-------------|-----------|------------|
+| Docker  | peer0.org1.example.com            | 142.0MB     | 24.43%   | 3.2MB      | 1.8MB       | 0B        | 7.5MB      |
+|---------|-----------------------------------|-------------|----------|------------|-------------|-----------|------------|
+| Docker  | ca.org1.example.com               | 8.0MB       | 0.25%    | 441B       | 0B          | 0B        | 0B         |
+|---------|-----------------------------------|-------------|----------|------------|-------------|-----------|------------|
+| Docker  | orderer.example.com               | 50.6MB      | 10.57%   | 2.2MB      | 4.3MB       | 432.0KB   | 5.0MB      |
+|---------|-----------------------------------|-------------|----------|------------|-------------|-----------|------------|
+| Docker  | ca.org2.example.com               | 24.6MB      | 0.23%    | 441B       | 0B          | 136.0KB   | 0B         |
++---------+-----------------------------------+-------------+----------+------------+-------------+-----------+------------+
+
+info: [bench-flow.js]: Generated report at /home/vinayak/Documents/go/src/github.com/hyperledger/caliper/report-20190404T163310.html
+info: [demo.js]: [Transaction Info] - Submitted: 1530 Succ: 1530 Fail:0 Unfinished:0
+info: [bench-flow.js]: Executing command: docker-compose -f network/fabric-v1.4/2org1peergoleveldb/docker-compose.yaml down;docker rm $(docker ps -aq);docker rmi $(docker images dev* -q)
+info: [client-util.js]: Client exited 
+info: [client-util.js]: Client exited 
+info: [client-util.js]: Client exited 
+info: [client-util.js]: Client exited 
+info: [client-util.js]: Client exited 
+ce3e1e080935
+1e3319d0870f
+Untagged: dev-peer0.org1.example.com-disaster-v1-7255a626dc7df4886305ae42dd28c6defa412a26d36035703dff693771760355:latest
+Deleted: sha256:3dae42536cec7a7c462586bee618c01da5dc169bcfe97a21cfed28d23521ba77
+Deleted: sha256:74e4751bf77d2a9520272f1f6845c428d983639f9a4e84faead756affcc5af08
+Deleted: sha256:ef898b3f2a67bb460c243188b721ef9169cb29d5c228d5d07b909bda2a5760ad
+Deleted: sha256:0a4cf19633122d20341a62b170ce9edff0c4e7d9ba4be40f6c01715868daf248
+Untagged: dev-peer0.org2.example.com-disaster-v1-091dc9a8568ec9ad3ff3323e5738bb4263ee00f26c577ce4756644a4d99043d4:latest
+Deleted: sha256:6eedf5b9ea4ee44c81df39002a9351fca6111cc55077d9b1bbcf14777e84344a
+Deleted: sha256:ddb8da62b12f6a0c355d1f7cbaa3a877efc75d8dc2f34770c2946c5d09503a2e
+Deleted: sha256:ae3b858e900ccf93b8af74ca995212e27dca1b5471176ab89678146e388a59b1
+Deleted: sha256:442e149687eeb7e2014cbb4b15af0c0e8958c32d0f134d19fda6c7e4cba71327
+info: [bench-flow.js]: 
+
+#######################################
+# Test summary: 5 succeeded, 0 failed #
+#######################################
+
+info: [scripts/main.js]: Benchmark run successfully
+
+> caliper@0.1.0 bench /home/vinayak/Documents/go/src/github.com/hyperledger/caliper
+> node ./scripts/main.js "-c" "benchmark/disaster/config.yaml" "-n" "network/fabric-v1.4/2org1peergoleveldb/fabric-go.json"
+
+info: [bench-flow.js]: ####### Caliper Test #######
+info: [bench-flow.js]: Executing command: docker-compose -f network/fabric-v1.4/2org1peergoleveldb/docker-compose.yaml up -d;sleep 3s
+info: [create-channel.js]: Creating mychannel...
+info: [create-channel.js]: Created mychannel successfully
+info: [create-channel.js]: Sleeping 5s...
+info: [join-channel.js]: Joining channels...
+info: [join-channel.js]: Joining organization org1 to channel mychannel...
+info: [join-channel.js]: Successfully joined peerOrg1's peers to mychannel
+info: [join-channel.js]: Joining organization org2 to channel mychannel...
+info: [join-channel.js]: Successfully joined peerOrg2's peers to mychannel
+info: [join-channel.js]: Successfully joined mychannel
+info: [install-chaincode.js]: installing all chaincodes......
+info: [install-chaincode.js]: Installing chaincode disaster...
+info: [install-chaincode.js]: Installing chaincode disaster...
+info: [install-chaincode.js]: Installed chaincode disaster successfully in all peers
+info: [instantiate-chaincode.js]: Instantiating chaincodes...
+info: [e2eUtils.js]: instantiate proposal was good
+info: [e2eUtils.js]: instantiate proposal was good
+info: [e2eUtils.js]: Successfully sent Proposal and received ProposalResponse
+info: [e2eUtils.js]: The chaincode instantiate transaction has been committed on peer localhost:7051
+info: [e2eUtils.js]: The chaincode instantiate transaction was valid.
+info: [e2eUtils.js]: The chaincode instantiate transaction has been committed on peer localhost:8051
+info: [e2eUtils.js]: The chaincode instantiate transaction was valid.
+info: [e2eUtils.js]: Successfully sent instantiatetransaction to the orderer.
+info: [instantiate-chaincode.js]: Instantiated chaincode disaster successfully
+info: [instantiate-chaincode.js]: Sleeping 5s...
+info: [bench-flow.js]: Started monitor successfully
+info: [bench-flow.js]: ####### Testing 'init' #######
+info: [bench-flow.js]: ------ Test round 1 ------
+info: [demo.js]: [Transaction Info] - Submitted: 0 Succ: 0 Fail:0 Unfinished:0
+info: [demo.js]: [Transaction Info] - Submitted: 0 Succ: 0 Fail:0 Unfinished:0
+info: [demo.js]: [Transaction Info] - Submitted: 0 Succ: 0 Fail:0 Unfinished:0
+info: [demo.js]: [Transaction Info] - Submitted: 0 Succ: 0 Fail:0 Unfinished:0
+info: [demo.js]: [Transaction Info] - Submitted: 9 Succ: 0 Fail:0 Unfinished:9
+info: [demo.js]: [Transaction Info] - Submitted: 34 Succ: 7 Fail:0 Unfinished:27
+info: [demo.js]: [Transaction Info] - Submitted: 59 Succ: 20 Fail:0 Unfinished:39
+info: [demo.js]: [Transaction Info] - Submitted: 89 Succ: 34 Fail:0 Unfinished:55
+info: [demo.js]: [Transaction Info] - Submitted: 114 Succ: 46 Fail:0 Unfinished:68
+info: [demo.js]: [Transaction Info] - Submitted: 139 Succ: 55 Fail:0 Unfinished:84
+info: [demo.js]: [Transaction Info] - Submitted: 164 Succ: 69 Fail:0 Unfinished:95
+info: [demo.js]: [Transaction Info] - Submitted: 189 Succ: 81 Fail:0 Unfinished:108
+info: [demo.js]: [Transaction Info] - Submitted: 214 Succ: 94 Fail:0 Unfinished:120
+info: [demo.js]: [Transaction Info] - Submitted: 239 Succ: 105 Fail:0 Unfinished:134
+info: [demo.js]: [Transaction Info] - Submitted: 264 Succ: 115 Fail:0 Unfinished:149
+info: [demo.js]: [Transaction Info] - Submitted: 294 Succ: 130 Fail:0 Unfinished:164
+info: [demo.js]: [Transaction Info] - Submitted: 319 Succ: 142 Fail:0 Unfinished:177
+info: [demo.js]: [Transaction Info] - Submitted: 344 Succ: 156 Fail:0 Unfinished:188
+info: [demo.js]: [Transaction Info] - Submitted: 369 Succ: 169 Fail:0 Unfinished:200
+info: [demo.js]: [Transaction Info] - Submitted: 394 Succ: 179 Fail:0 Unfinished:215
+info: [demo.js]: [Transaction Info] - Submitted: 419 Succ: 194 Fail:0 Unfinished:225
+info: [demo.js]: [Transaction Info] - Submitted: 444 Succ: 204 Fail:0 Unfinished:240
+info: [demo.js]: [Transaction Info] - Submitted: 469 Succ: 215 Fail:0 Unfinished:254
+info: [demo.js]: [Transaction Info] - Submitted: 494 Succ: 227 Fail:0 Unfinished:267
+info: [demo.js]: [Transaction Info] - Submitted: 500 Succ: 242 Fail:0 Unfinished:258
+info: [demo.js]: [Transaction Info] - Submitted: 500 Succ: 253 Fail:0 Unfinished:247
+info: [demo.js]: [Transaction Info] - Submitted: 500 Succ: 267 Fail:0 Unfinished:233
+info: [demo.js]: [Transaction Info] - Submitted: 500 Succ: 282 Fail:0 Unfinished:218
+info: [demo.js]: [Transaction Info] - Submitted: 500 Succ: 296 Fail:0 Unfinished:204
+info: [demo.js]: [Transaction Info] - Submitted: 500 Succ: 311 Fail:0 Unfinished:189
+info: [demo.js]: [Transaction Info] - Submitted: 500 Succ: 322 Fail:0 Unfinished:178
+info: [demo.js]: [Transaction Info] - Submitted: 500 Succ: 331 Fail:0 Unfinished:169
+info: [demo.js]: [Transaction Info] - Submitted: 500 Succ: 339 Fail:0 Unfinished:161
+info: [demo.js]: [Transaction Info] - Submitted: 500 Succ: 353 Fail:0 Unfinished:147
+info: [demo.js]: [Transaction Info] - Submitted: 500 Succ: 368 Fail:0 Unfinished:132
+info: [demo.js]: [Transaction Info] - Submitted: 500 Succ: 386 Fail:0 Unfinished:114
+info: [demo.js]: [Transaction Info] - Submitted: 500 Succ: 399 Fail:0 Unfinished:101
+info: [demo.js]: [Transaction Info] - Submitted: 500 Succ: 415 Fail:0 Unfinished:85
+info: [demo.js]: [Transaction Info] - Submitted: 500 Succ: 429 Fail:0 Unfinished:71
+info: [demo.js]: [Transaction Info] - Submitted: 500 Succ: 444 Fail:0 Unfinished:56
+info: [demo.js]: [Transaction Info] - Submitted: 500 Succ: 458 Fail:0 Unfinished:42
+info: [demo.js]: [Transaction Info] - Submitted: 500 Succ: 471 Fail:0 Unfinished:29
+info: [demo.js]: [Transaction Info] - Submitted: 500 Succ: 488 Fail:0 Unfinished:12
+info: [demo.js]: [Transaction Info] - Submitted: 500 Succ: 500 Fail:0 Unfinished:0
+info: [bench-flow.js]: ###test result:###
+info: [bench-flow.js]: 
++------+------+------+-----------+-------------+-------------+-------------+------------+
+| Name | Succ | Fail | Send Rate | Max Latency | Min Latency | Avg Latency | Throughput |
+|------|------|------|-----------|-------------|-------------|-------------|------------|
+| init | 500  | 0    | 24.2 tps  | 19.88 s     | 0.70 s      | 11.10 s     | 12.4 tps   |
++------+------+------+-----------+-------------+-------------+-------------+------------+
+
+info: [bench-flow.js]: ### resource stats ###
+info: [bench-flow.js]: 
++---------+-----------------------------------+-------------+-------------+----------+----------+------------+-------------+-----------+------------+
+| TYPE    | NAME                              | Memory(max) | Memory(avg) | CPU(max) | CPU(avg) | Traffic In | Traffic Out | Disc Read | Disc Write |
+|---------|-----------------------------------|-------------|-------------|----------|----------|------------|-------------|-----------|------------|
+| Process | node local-client.js(avg)         | 133.6MB     | 130.3MB     | 72.35%   | 7.82%    | -          | -           | -         | -          |
+|---------|-----------------------------------|-------------|-------------|----------|----------|------------|-------------|-----------|------------|
+| Docker  | dev-peer0.org1.example.co...er-v1 | 6.3MB       | 5.6MB       | 2.95%    | 1.30%    | 888.5KB    | 407.6KB     | 0B        | 0B         |
+|---------|-----------------------------------|-------------|-------------|----------|----------|------------|-------------|-----------|------------|
+| Docker  | dev-peer0.org2.example.co...er-v1 | 6.3MB       | 5.6MB       | 3.03%    | 1.25%    | 888.4KB    | 407.9KB     | 0B        | 0B         |
+|---------|-----------------------------------|-------------|-------------|----------|----------|------------|-------------|-----------|------------|
+| Docker  | peer0.org2.example.com            | 130.7MB     | 124.1MB     | 13.49%   | 8.43%    | 3.2MB      | 1.7MB       | 0B        | 7.9MB      |
+|---------|-----------------------------------|-------------|-------------|----------|----------|------------|-------------|-----------|------------|
+| Docker  | peer0.org1.example.com            | 104.5MB     | 102.0MB     | 12.65%   | 7.94%    | 3.2MB      | 1.8MB       | 0B        | 7.9MB      |
+|---------|-----------------------------------|-------------|-------------|----------|----------|------------|-------------|-----------|------------|
+| Docker  | ca.org1.example.com               | 7.9MB       | 7.9MB       | 0.00%    | 0.00%    | 107B       | 0B          | 0B        | 0B         |
+|---------|-----------------------------------|-------------|-------------|----------|----------|------------|-------------|-----------|------------|
+| Docker  | orderer.example.com               | 19.3MB      | 18.0MB      | 5.24%    | 2.32%    | 2.3MB      | 4.4MB       | 0B        | 5.2MB      |
+|---------|-----------------------------------|-------------|-------------|----------|----------|------------|-------------|-----------|------------|
+| Docker  | ca.org2.example.com               | 8.2MB       | 8.2MB       | 0.00%    | 0.00%    | 0B         | 0B          | 0B        | 0B         |
++---------+-----------------------------------+-------------+-------------+----------+----------+------------+-------------+-----------+------------+
+
+info: [bench-flow.js]: ------ Passed 'init' testing ------
+info: [bench-flow.js]: Waiting 5 seconds for the next round...
+info: [demo.js]: [Transaction Info] - Submitted: 500 Succ: 500 Fail:0 Unfinished:0
+info: [demo.js]: [Transaction Info] - Submitted: 500 Succ: 500 Fail:0 Unfinished:0
+info: [demo.js]: [Transaction Info] - Submitted: 500 Succ: 500 Fail:0 Unfinished:0
+info: [demo.js]: [Transaction Info] - Submitted: 500 Succ: 500 Fail:0 Unfinished:0
+info: [demo.js]: [Transaction Info] - Submitted: 500 Succ: 500 Fail:0 Unfinished:0
+info: [bench-flow.js]: ------ Test round 2 ------
+info: [demo.js]: [Transaction Info] - Submitted: 500 Succ: 500 Fail:0 Unfinished:0
+info: [demo.js]: [Transaction Info] - Submitted: 549 Succ: 510 Fail:0 Unfinished:39
+info: [demo.js]: [Transaction Info] - Submitted: 599 Succ: 520 Fail:0 Unfinished:79
+info: [demo.js]: [Transaction Info] - Submitted: 649 Succ: 540 Fail:0 Unfinished:109
+info: [demo.js]: [Transaction Info] - Submitted: 699 Succ: 550 Fail:0 Unfinished:149
+info: [demo.js]: [Transaction Info] - Submitted: 749 Succ: 570 Fail:0 Unfinished:179
+info: [demo.js]: [Transaction Info] - Submitted: 799 Succ: 588 Fail:0 Unfinished:211
+info: [demo.js]: [Transaction Info] - Submitted: 849 Succ: 600 Fail:0 Unfinished:249
+info: [demo.js]: [Transaction Info] - Submitted: 899 Succ: 620 Fail:0 Unfinished:279
+info: [demo.js]: [Transaction Info] - Submitted: 949 Succ: 640 Fail:0 Unfinished:309
+info: [demo.js]: [Transaction Info] - Submitted: 999 Succ: 654 Fail:0 Unfinished:345
+info: [demo.js]: [Transaction Info] - Submitted: 1000 Succ: 674 Fail:0 Unfinished:326
+info: [demo.js]: [Transaction Info] - Submitted: 1000 Succ: 694 Fail:0 Unfinished:306
+info: [demo.js]: [Transaction Info] - Submitted: 1000 Succ: 714 Fail:0 Unfinished:286
+info: [demo.js]: [Transaction Info] - Submitted: 1000 Succ: 733 Fail:0 Unfinished:267
+info: [demo.js]: [Transaction Info] - Submitted: 1000 Succ: 760 Fail:0 Unfinished:240
+info: [demo.js]: [Transaction Info] - Submitted: 1000 Succ: 780 Fail:0 Unfinished:220
+info: [demo.js]: [Transaction Info] - Submitted: 1000 Succ: 800 Fail:0 Unfinished:200
+info: [demo.js]: [Transaction Info] - Submitted: 1000 Succ: 820 Fail:0 Unfinished:180
+info: [demo.js]: [Transaction Info] - Submitted: 1000 Succ: 840 Fail:0 Unfinished:160
+info: [demo.js]: [Transaction Info] - Submitted: 1000 Succ: 860 Fail:0 Unfinished:140
+info: [demo.js]: [Transaction Info] - Submitted: 1000 Succ: 880 Fail:0 Unfinished:120
+info: [demo.js]: [Transaction Info] - Submitted: 1000 Succ: 894 Fail:0 Unfinished:106
+info: [demo.js]: [Transaction Info] - Submitted: 1000 Succ: 910 Fail:0 Unfinished:90
+info: [demo.js]: [Transaction Info] - Submitted: 1000 Succ: 930 Fail:0 Unfinished:70
+info: [demo.js]: [Transaction Info] - Submitted: 1000 Succ: 940 Fail:0 Unfinished:60
+info: [demo.js]: [Transaction Info] - Submitted: 1000 Succ: 950 Fail:0 Unfinished:50
+info: [demo.js]: [Transaction Info] - Submitted: 1000 Succ: 960 Fail:0 Unfinished:40
+info: [demo.js]: [Transaction Info] - Submitted: 1000 Succ: 974 Fail:0 Unfinished:26
+info: [demo.js]: [Transaction Info] - Submitted: 1000 Succ: 985 Fail:0 Unfinished:15
+info: [demo.js]: [Transaction Info] - Submitted: 1000 Succ: 1000 Fail:0 Unfinished:0
+info: [bench-flow.js]: ###test result:###
+info: [bench-flow.js]: 
++------+------+------+-----------+-------------+-------------+-------------+------------+
+| Name | Succ | Fail | Send Rate | Max Latency | Min Latency | Avg Latency | Throughput |
+|------|------|------|-----------|-------------|-------------|-------------|------------|
+| init | 500  | 0    | 50.2 tps  | 20.02 s     | 0.71 s      | 9.71 s      | 16.8 tps   |
++------+------+------+-----------+-------------+-------------+-------------+------------+
+
+info: [bench-flow.js]: ### resource stats ###
+info: [bench-flow.js]: 
++---------+-----------------------------------+-------------+-------------+----------+----------+------------+-------------+-----------+------------+
+| TYPE    | NAME                              | Memory(max) | Memory(avg) | CPU(max) | CPU(avg) | Traffic In | Traffic Out | Disc Read | Disc Write |
+|---------|-----------------------------------|-------------|-------------|----------|----------|------------|-------------|-----------|------------|
+| Process | node local-client.js(avg)         | 116.7MB     | 114.5MB     | 13.40%   | 4.14%    | -          | -           | -         | -          |
+|---------|-----------------------------------|-------------|-------------|----------|----------|------------|-------------|-----------|------------|
+| Docker  | dev-peer0.org1.example.co...er-v1 | 6.5MB       | 6.4MB       | 4.56%    | 1.42%    | 742.5KB    | 342.9KB     | 0B        | 0B         |
+|---------|-----------------------------------|-------------|-------------|----------|----------|------------|-------------|-----------|------------|
+| Docker  | dev-peer0.org2.example.co...er-v1 | 6.5MB       | 6.5MB       | 4.77%    | 1.46%    | 742.7KB    | 343.7KB     | 0B        | 0B         |
+|---------|-----------------------------------|-------------|-------------|----------|----------|------------|-------------|-----------|------------|
+| Docker  | peer0.org2.example.com            | 133.1MB     | 132.1MB     | 19.52%   | 10.65%   | 2.8MB      | 1.4MB       | 0B        | 6.4MB      |
+|---------|-----------------------------------|-------------|-------------|----------|----------|------------|-------------|-----------|------------|
+| Docker  | peer0.org1.example.com            | 110.5MB     | 107.5MB     | 19.53%   | 9.98%    | 2.8MB      | 1.4MB       | 0B        | 6.4MB      |
+|---------|-----------------------------------|-------------|-------------|----------|----------|------------|-------------|-----------|------------|
+| Docker  | ca.org1.example.com               | 7.9MB       | 7.9MB       | 0.32%    | 0.02%    | 441B       | 0B          | 0B        | 0B         |
+|---------|-----------------------------------|-------------|-------------|----------|----------|------------|-------------|-----------|------------|
+| Docker  | orderer.example.com               | 23.0MB      | 22.5MB      | 9.81%    | 2.72%    | 1.9MB      | 3.8MB       | 0B        | 4.2MB      |
+|---------|-----------------------------------|-------------|-------------|----------|----------|------------|-------------|-----------|------------|
+| Docker  | ca.org2.example.com               | 8.2MB       | 8.2MB       | 0.00%    | 0.00%    | 441B       | 0B          | 0B        | 0B         |
++---------+-----------------------------------+-------------+-------------+----------+----------+------------+-------------+-----------+------------+
+
+info: [bench-flow.js]: ------ Passed 'init' testing ------
+info: [bench-flow.js]: Waiting 5 seconds for the next round...
+info: [demo.js]: [Transaction Info] - Submitted: 1000 Succ: 1000 Fail:0 Unfinished:0
+info: [demo.js]: [Transaction Info] - Submitted: 1000 Succ: 1000 Fail:0 Unfinished:0
+info: [demo.js]: [Transaction Info] - Submitted: 1000 Succ: 1000 Fail:0 Unfinished:0
+info: [demo.js]: [Transaction Info] - Submitted: 1000 Succ: 1000 Fail:0 Unfinished:0
+info: [demo.js]: [Transaction Info] - Submitted: 1000 Succ: 1000 Fail:0 Unfinished:0
+info: [bench-flow.js]: ------ Test round 3 ------
+info: [demo.js]: [Transaction Info] - Submitted: 1000 Succ: 1000 Fail:0 Unfinished:0
+info: [demo.js]: [Transaction Info] - Submitted: 1072 Succ: 1000 Fail:0 Unfinished:72
+info: [demo.js]: [Transaction Info] - Submitted: 1147 Succ: 1020 Fail:0 Unfinished:127
+info: [demo.js]: [Transaction Info] - Submitted: 1222 Succ: 1040 Fail:0 Unfinished:182
+info: [demo.js]: [Transaction Info] - Submitted: 1297 Succ: 1050 Fail:0 Unfinished:247
+info: [demo.js]: [Transaction Info] - Submitted: 1372 Succ: 1070 Fail:0 Unfinished:302
+info: [demo.js]: [Transaction Info] - Submitted: 1447 Succ: 1080 Fail:0 Unfinished:367
+info: [demo.js]: [Transaction Info] - Submitted: 1500 Succ: 1100 Fail:0 Unfinished:400
+info: [demo.js]: [Transaction Info] - Submitted: 1500 Succ: 1110 Fail:0 Unfinished:390
+info: [demo.js]: [Transaction Info] - Submitted: 1500 Succ: 1130 Fail:0 Unfinished:370
+info: [demo.js]: [Transaction Info] - Submitted: 1500 Succ: 1140 Fail:0 Unfinished:360
+info: [demo.js]: [Transaction Info] - Submitted: 1500 Succ: 1160 Fail:0 Unfinished:340
+info: [demo.js]: [Transaction Info] - Submitted: 1500 Succ: 1180 Fail:0 Unfinished:320
+info: [demo.js]: [Transaction Info] - Submitted: 1500 Succ: 1196 Fail:0 Unfinished:304
+info: [demo.js]: [Transaction Info] - Submitted: 1500 Succ: 1210 Fail:0 Unfinished:290
+info: [demo.js]: [Transaction Info] - Submitted: 1500 Succ: 1230 Fail:0 Unfinished:270
+info: [demo.js]: [Transaction Info] - Submitted: 1500 Succ: 1250 Fail:0 Unfinished:250
+info: [demo.js]: [Transaction Info] - Submitted: 1500 Succ: 1265 Fail:0 Unfinished:235
+info: [demo.js]: [Transaction Info] - Submitted: 1500 Succ: 1280 Fail:0 Unfinished:220
+info: [demo.js]: [Transaction Info] - Submitted: 1500 Succ: 1300 Fail:0 Unfinished:200
+info: [demo.js]: [Transaction Info] - Submitted: 1500 Succ: 1320 Fail:0 Unfinished:180
+info: [demo.js]: [Transaction Info] - Submitted: 1500 Succ: 1330 Fail:0 Unfinished:170
+info: [demo.js]: [Transaction Info] - Submitted: 1500 Succ: 1343 Fail:0 Unfinished:157
+info: [demo.js]: [Transaction Info] - Submitted: 1500 Succ: 1360 Fail:0 Unfinished:140
+info: [demo.js]: [Transaction Info] - Submitted: 1500 Succ: 1370 Fail:0 Unfinished:130
+info: [demo.js]: [Transaction Info] - Submitted: 1500 Succ: 1380 Fail:0 Unfinished:120
+info: [demo.js]: [Transaction Info] - Submitted: 1500 Succ: 1390 Fail:0 Unfinished:110
+info: [demo.js]: [Transaction Info] - Submitted: 1500 Succ: 1400 Fail:0 Unfinished:100
+info: [demo.js]: [Transaction Info] - Submitted: 1500 Succ: 1420 Fail:0 Unfinished:80
+info: [demo.js]: [Transaction Info] - Submitted: 1500 Succ: 1430 Fail:0 Unfinished:70
+info: [demo.js]: [Transaction Info] - Submitted: 1500 Succ: 1440 Fail:0 Unfinished:60
+info: [demo.js]: [Transaction Info] - Submitted: 1500 Succ: 1450 Fail:0 Unfinished:50
+info: [demo.js]: [Transaction Info] - Submitted: 1500 Succ: 1460 Fail:0 Unfinished:40
+info: [demo.js]: [Transaction Info] - Submitted: 1500 Succ: 1480 Fail:0 Unfinished:20
+info: [demo.js]: [Transaction Info] - Submitted: 1500 Succ: 1480 Fail:0 Unfinished:20
+info: [demo.js]: [Transaction Info] - Submitted: 1500 Succ: 1490 Fail:0 Unfinished:10
+info: [bench-flow.js]: ###test result:###
+info: [bench-flow.js]: 
++------+------+------+-----------+-------------+-------------+-------------+------------+
+| Name | Succ | Fail | Send Rate | Max Latency | Min Latency | Avg Latency | Throughput |
+|------|------|------|-----------|-------------|-------------|-------------|------------|
+| init | 500  | 0    | 75.1 tps  | 28.74 s     | 0.86 s      | 13.42 s     | 14.2 tps   |
++------+------+------+-----------+-------------+-------------+-------------+------------+
+
+info: [bench-flow.js]: ### resource stats ###
+info: [bench-flow.js]: 
++---------+-----------------------------------+-------------+-------------+----------+----------+------------+-------------+-----------+------------+
+| TYPE    | NAME                              | Memory(max) | Memory(avg) | CPU(max) | CPU(avg) | Traffic In | Traffic Out | Disc Read | Disc Write |
+|---------|-----------------------------------|-------------|-------------|----------|----------|------------|-------------|-----------|------------|
+| Process | node local-client.js(avg)         | 121.2MB     | 107.7MB     | 20.40%   | 4.06%    | -          | -           | -         | -          |
+|---------|-----------------------------------|-------------|-------------|----------|----------|------------|-------------|-----------|------------|
+| Docker  | dev-peer0.org1.example.co...er-v1 | 6.5MB       | 6.5MB       | 6.42%    | 0.98%    | 621.1KB    | 283.3KB     | 0B        | 0B         |
+|---------|-----------------------------------|-------------|-------------|----------|----------|------------|-------------|-----------|------------|
+| Docker  | dev-peer0.org2.example.co...er-v1 | 6.6MB       | 6.6MB       | 6.44%    | 1.01%    | 620.5KB    | 285.0KB     | 0B        | 0B         |
+|---------|-----------------------------------|-------------|-------------|----------|----------|------------|-------------|-----------|------------|
+| Docker  | peer0.org2.example.com            | 137.6MB     | 135.7MB     | 26.33%   | 8.16%    | 2.5MB      | 1.2MB       | 0B        | 6.3MB      |
+|---------|-----------------------------------|-------------|-------------|----------|----------|------------|-------------|-----------|------------|
+| Docker  | peer0.org1.example.com            | 114.3MB     | 112.6MB     | 27.19%   | 8.82%    | 2.5MB      | 1.2MB       | 0B        | 6.3MB      |
+|---------|-----------------------------------|-------------|-------------|----------|----------|------------|-------------|-----------|------------|
+| Docker  | ca.org1.example.com               | 7.9MB       | 7.9MB       | 0.00%    | 0.00%    | 0B         | 0B          | 0B        | 0B         |
+|---------|-----------------------------------|-------------|-------------|----------|----------|------------|-------------|-----------|------------|
+| Docker  | orderer.example.com               | 31.8MB      | 30.8MB      | 11.61%   | 2.19%    | 1.6MB      | 3.6MB       | 0B        | 3.9MB      |
+|---------|-----------------------------------|-------------|-------------|----------|----------|------------|-------------|-----------|------------|
+| Docker  | ca.org2.example.com               | 8.2MB       | 8.2MB       | 0.00%    | 0.00%    | 0B         | 0B          | 0B        | 0B         |
++---------+-----------------------------------+-------------+-------------+----------+----------+------------+-------------+-----------+------------+
+
+info: [bench-flow.js]: ------ Passed 'init' testing ------
+info: [bench-flow.js]: Waiting 5 seconds for the next round...
+info: [demo.js]: [Transaction Info] - Submitted: 1500 Succ: 1500 Fail:0 Unfinished:0
+info: [demo.js]: [Transaction Info] - Submitted: 1500 Succ: 1500 Fail:0 Unfinished:0
+info: [demo.js]: [Transaction Info] - Submitted: 1500 Succ: 1500 Fail:0 Unfinished:0
+info: [demo.js]: [Transaction Info] - Submitted: 1500 Succ: 1500 Fail:0 Unfinished:0
+info: [demo.js]: [Transaction Info] - Submitted: 1500 Succ: 1500 Fail:0 Unfinished:0
+info: [bench-flow.js]: ####### Testing 'query' #######
+info: [bench-flow.js]: ------ Test round 4 ------
+info: [demo.js]: [Transaction Info] - Submitted: 1500 Succ: 1500 Fail:0 Unfinished:0
+info: [demo.js]: [Transaction Info] - Submitted: 1505 Succ: 1505 Fail:0 Unfinished:0
+info: [demo.js]: [Transaction Info] - Submitted: 1510 Succ: 1505 Fail:0 Unfinished:5
+info: [demo.js]: [Transaction Info] - Submitted: 1515 Succ: 1515 Fail:0 Unfinished:0
+info: [demo.js]: [Transaction Info] - Submitted: 1515 Succ: 1515 Fail:0 Unfinished:0
+info: [bench-flow.js]: ###test result:###
+info: [bench-flow.js]: 
++-------+------+------+-----------+-------------+-------------+-------------+------------+
+| Name  | Succ | Fail | Send Rate | Max Latency | Min Latency | Avg Latency | Throughput |
+|-------|------|------|-----------|-------------|-------------|-------------|------------|
+| query | 15   | 0    | 7.0 tps   | 1.03 s      | 0.49 s      | 0.76 s      | 5.1 tps    |
++-------+------+------+-----------+-------------+-------------+-------------+------------+
+
+info: [bench-flow.js]: ### resource stats ###
+info: [bench-flow.js]: 
++---------+-----------------------------------+-------------+-------------+----------+----------+------------+-------------+-----------+------------+
+| TYPE    | NAME                              | Memory(max) | Memory(avg) | CPU(max) | CPU(avg) | Traffic In | Traffic Out | Disc Read | Disc Write |
+|---------|-----------------------------------|-------------|-------------|----------|----------|------------|-------------|-----------|------------|
+| Process | node local-client.js(avg)         | 89.6MB      | 89.5MB      | 4.09%    | 2.24%    | -          | -           | -         | -          |
+|---------|-----------------------------------|-------------|-------------|----------|----------|------------|-------------|-----------|------------|
+| Docker  | dev-peer0.org1.example.co...er-v1 | 6.5MB       | 6.5MB       | 0.48%    | 0.47%    | 18.6KB     | 6.8KB       | 0B        | 0B         |
+|---------|-----------------------------------|-------------|-------------|----------|----------|------------|-------------|-----------|------------|
+| Docker  | dev-peer0.org2.example.co...er-v1 | 6.6MB       | 6.6MB       | 0.45%    | 0.43%    | 18.8KB     | 6.8KB       | 0B        | 0B         |
+|---------|-----------------------------------|-------------|-------------|----------|----------|------------|-------------|-----------|------------|
+| Docker  | peer0.org2.example.com            | 137.7MB     | 137.7MB     | 4.63%    | 4.59%    | 63.5KB     | 33.5KB      | 0B        | 168.0KB    |
+|---------|-----------------------------------|-------------|-------------|----------|----------|------------|-------------|-----------|------------|
+| Docker  | peer0.org1.example.com            | 114.3MB     | 114.3MB     | 5.81%    | 5.47%    | 63.2KB     | 34.1KB      | 0B        | 168.0KB    |
+|---------|-----------------------------------|-------------|-------------|----------|----------|------------|-------------|-----------|------------|
+| Docker  | ca.org1.example.com               | 7.9MB       | 7.9MB       | 0.00%    | 0.00%    | 0B         | 0B          | 0B        | 0B         |
+|---------|-----------------------------------|-------------|-------------|----------|----------|------------|-------------|-----------|------------|
+| Docker  | orderer.example.com               | 31.9MB      | 31.9MB      | 1.28%    | 1.16%    | 45.4KB     | 89.4KB      | 0B        | 120.0KB    |
+|---------|-----------------------------------|-------------|-------------|----------|----------|------------|-------------|-----------|------------|
+| Docker  | ca.org2.example.com               | 8.2MB       | 8.2MB       | 0.00%    | 0.00%    | 0B         | 0B          | 0B        | 0B         |
++---------+-----------------------------------+-------------+-------------+----------+----------+------------+-------------+-----------+------------+
+
+info: [bench-flow.js]: ------ Passed 'query' testing ------
+info: [bench-flow.js]: Waiting 5 seconds for the next round...
+info: [demo.js]: [Transaction Info] - Submitted: 1515 Succ: 1515 Fail:0 Unfinished:0
+info: [demo.js]: [Transaction Info] - Submitted: 1515 Succ: 1515 Fail:0 Unfinished:0
+info: [demo.js]: [Transaction Info] - Submitted: 1515 Succ: 1515 Fail:0 Unfinished:0
+info: [demo.js]: [Transaction Info] - Submitted: 1515 Succ: 1515 Fail:0 Unfinished:0
+info: [demo.js]: [Transaction Info] - Submitted: 1515 Succ: 1515 Fail:0 Unfinished:0
+info: [bench-flow.js]: ------ Test round 5 ------
+info: [demo.js]: [Transaction Info] - Submitted: 1515 Succ: 1515 Fail:0 Unfinished:0
+info: [demo.js]: [Transaction Info] - Submitted: 1520 Succ: 1515 Fail:0 Unfinished:5
+info: [demo.js]: [Transaction Info] - Submitted: 1525 Succ: 1520 Fail:0 Unfinished:5
+info: [demo.js]: [Transaction Info] - Submitted: 1530 Succ: 1530 Fail:0 Unfinished:0
+info: [bench-flow.js]: ###test result:###
+info: [bench-flow.js]: 
++-------+------+------+-----------+-------------+-------------+-------------+------------+
+| Name  | Succ | Fail | Send Rate | Max Latency | Min Latency | Avg Latency | Throughput |
+|-------|------|------|-----------|-------------|-------------|-------------|------------|
+| query | 15   | 0    | 7.3 tps   | 1.11 s      | 0.82 s      | 0.95 s      | 5.2 tps    |
++-------+------+------+-----------+-------------+-------------+-------------+------------+
+
+info: [bench-flow.js]: ### resource stats ###
+info: [bench-flow.js]: 
++---------+-----------------------------------+-------------+-------------+----------+----------+------------+-------------+-----------+------------+
+| TYPE    | NAME                              | Memory(max) | Memory(avg) | CPU(max) | CPU(avg) | Traffic In | Traffic Out | Disc Read | Disc Write |
+|---------|-----------------------------------|-------------|-------------|----------|----------|------------|-------------|-----------|------------|
+| Process | node local-client.js(avg)         | 94.4MB      | 93.3MB      | 1.52%    | 1.05%    | -          | -           | -         | -          |
+|---------|-----------------------------------|-------------|-------------|----------|----------|------------|-------------|-----------|------------|
+| Docker  | dev-peer0.org1.example.co...er-v1 | 6.5MB       | 6.5MB       | 0.44%    | 0.22%    | 9.2KB      | 3.4KB       | 0B        | 0B         |
+|---------|-----------------------------------|-------------|-------------|----------|----------|------------|-------------|-----------|------------|
+| Docker  | dev-peer0.org2.example.co...er-v1 | 6.6MB       | 6.6MB       | 0.34%    | 0.17%    | 9.1KB      | 3.3KB       | 0B        | 0B         |
+|---------|-----------------------------------|-------------|-------------|----------|----------|------------|-------------|-----------|------------|
+| Docker  | peer0.org2.example.com            | 137.8MB     | 137.8MB     | 4.26%    | 3.51%    | 52.8KB     | 17.5KB      | 0B        | 184.0KB    |
+|---------|-----------------------------------|-------------|-------------|----------|----------|------------|-------------|-----------|------------|
+| Docker  | peer0.org1.example.com            | 114.4MB     | 114.4MB     | 4.30%    | 3.77%    | 54.0KB     | 21.1KB      | 0B        | 184.0KB    |
+|---------|-----------------------------------|-------------|-------------|----------|----------|------------|-------------|-----------|------------|
+| Docker  | ca.org1.example.com               | 7.9MB       | 7.9MB       | 0.00%    | 0.00%    | 0B         | 0B          | 0B        | 0B         |
+|---------|-----------------------------------|-------------|-------------|----------|----------|------------|-------------|-----------|------------|
+| Docker  | orderer.example.com               | 32.0MB      | 32.0MB      | 1.73%    | 0.93%    | 23.4KB     | 86.1KB      | 0B        | 64.0KB     |
+|---------|-----------------------------------|-------------|-------------|----------|----------|------------|-------------|-----------|------------|
+| Docker  | ca.org2.example.com               | 8.2MB       | 8.2MB       | 0.00%    | 0.00%    | 0B         | 0B          | 0B        | 0B         |
++---------+-----------------------------------+-------------+-------------+----------+----------+------------+-------------+-----------+------------+
+
+info: [bench-flow.js]: ------ Passed 'query' testing ------
+info: [bench-flow.js]: ---------- Finished Test ----------
+
+info: [bench-flow.js]: ###all test results:###
+info: [bench-flow.js]: 
++------+-------+------+------+-----------+-------------+-------------+-------------+------------+
+| Test | Name  | Succ | Fail | Send Rate | Max Latency | Min Latency | Avg Latency | Throughput |
+|------|-------|------|------|-----------|-------------|-------------|-------------|------------|
+| 1    | init  | 500  | 0    | 24.2 tps  | 19.88 s     | 0.70 s      | 11.10 s     | 12.4 tps   |
+|------|-------|------|------|-----------|-------------|-------------|-------------|------------|
+| 2    | init  | 500  | 0    | 50.2 tps  | 20.02 s     | 0.71 s      | 9.71 s      | 16.8 tps   |
+|------|-------|------|------|-----------|-------------|-------------|-------------|------------|
+| 3    | init  | 500  | 0    | 75.1 tps  | 28.74 s     | 0.86 s      | 13.42 s     | 14.2 tps   |
+|------|-------|------|------|-----------|-------------|-------------|-------------|------------|
+| 4    | query | 15   | 0    | 7.0 tps   | 1.03 s      | 0.49 s      | 0.76 s      | 5.1 tps    |
+|------|-------|------|------|-----------|-------------|-------------|-------------|------------|
+| 5    | query | 15   | 0    | 7.3 tps   | 1.11 s      | 0.82 s      | 0.95 s      | 5.2 tps    |
++------+-------+------+------+-----------+-------------+-------------+-------------+------------+
+
+info: [monitor.js]: 
+ ### resource stats (maximum) ###
+info: [monitor.js]: 
++---------+-----------------------------------+-------------+----------+------------+-------------+-----------+------------+
+| TYPE    | NAME                              | Memory(max) | CPU(max) | Traffic In | Traffic Out | Disc Read | Disc Write |
+|---------|-----------------------------------|-------------|----------|------------|-------------|-----------|------------|
+| Process | node local-client.js(avg)         | 133.6MB     | 72.35%   | -          | -           | -         | -          |
+|---------|-----------------------------------|-------------|----------|------------|-------------|-----------|------------|
+| Docker  | dev-peer0.org1.example.co...er-v1 | 6.5MB       | 6.42%    | 888.5KB    | 407.6KB     | 0B        | 0B         |
+|---------|-----------------------------------|-------------|----------|------------|-------------|-----------|------------|
+| Docker  | dev-peer0.org2.example.co...er-v1 | 6.6MB       | 6.44%    | 888.4KB    | 407.9KB     | 0B        | 0B         |
+|---------|-----------------------------------|-------------|----------|------------|-------------|-----------|------------|
+| Docker  | peer0.org2.example.com            | 137.8MB     | 26.33%   | 3.2MB      | 1.7MB       | 0B        | 7.9MB      |
+|---------|-----------------------------------|-------------|----------|------------|-------------|-----------|------------|
+| Docker  | peer0.org1.example.com            | 114.4MB     | 27.19%   | 3.2MB      | 1.8MB       | 0B        | 7.9MB      |
+|---------|-----------------------------------|-------------|----------|------------|-------------|-----------|------------|
+| Docker  | ca.org1.example.com               | 7.9MB       | 0.32%    | 441B       | 0B          | 0B        | 0B         |
+|---------|-----------------------------------|-------------|----------|------------|-------------|-----------|------------|
+| Docker  | orderer.example.com               | 32.0MB      | 11.61%   | 2.3MB      | 4.4MB       | 0B        | 5.2MB      |
+|---------|-----------------------------------|-------------|----------|------------|-------------|-----------|------------|
+| Docker  | ca.org2.example.com               | 8.2MB       | 0.00%    | 441B       | 0B          | 0B        | 0B         |
++---------+-----------------------------------+-------------+----------+------------+-------------+-----------+------------+
+
+info: [bench-flow.js]: Generated report at /home/vinayak/Documents/go/src/github.com/hyperledger/caliper/report-20190404T163858.html
+info: [demo.js]: [Transaction Info] - Submitted: 1530 Succ: 1530 Fail:0 Unfinished:0
+info: [bench-flow.js]: Executing command: docker-compose -f network/fabric-v1.4/2org1peergoleveldb/docker-compose.yaml down;docker rm $(docker ps -aq);docker rmi $(docker images dev* -q)
+info: [client-util.js]: Client exited 
+info: [client-util.js]: Client exited 
+info: [client-util.js]: Client exited 
+info: [client-util.js]: Client exited 
+info: [client-util.js]: Client exited 
+929e09c686e2
+6259e7c6057c
+Untagged: dev-peer0.org1.example.com-disaster-v1-7255a626dc7df4886305ae42dd28c6defa412a26d36035703dff693771760355:latest
+Deleted: sha256:5e2c1b8f449f83be1715ba11531314fdb956053dead8679b0a75c98e1133d34f
+Deleted: sha256:34a830504315f53312b681a65e7e6f786d34f3ee5d323cadda251c1c62f69d35
+Deleted: sha256:1bfd546c2c3deafcfddd14fa4bccfaa4084eeb063d18925f80e1d3f6547de2c7
+Deleted: sha256:8a7aef2cf7695e8894cbe573b2a65fe193a9194b2ff4cdb09a9644c0b15026a1
+Untagged: dev-peer0.org2.example.com-disaster-v1-091dc9a8568ec9ad3ff3323e5738bb4263ee00f26c577ce4756644a4d99043d4:latest
+Deleted: sha256:2469b5e511a4ee6f89d1a0b79f9fa711a34df2f510b88b73cdf4f823af238b78
+Deleted: sha256:b353b82f84640b4f5b74395cc805056dbdbad0241011113c6ffbddd96d7041b8
+Deleted: sha256:edf29d0de6862eca626e4850557a91795518c8bb6e997b81f38d75daa82d6450
+Deleted: sha256:66e301488f4a6603faa61f3681e07475d897bdc6c38631bbf4517e7b127f9b3a
+info: [bench-flow.js]: 
+
+#######################################
+# Test summary: 5 succeeded, 0 failed #
+#######################################
+
+info: [scripts/main.js]: Benchmark run successfully
+
+> caliper@0.1.0 bench /home/vinayak/Documents/go/src/github.com/hyperledger/caliper
+> node ./scripts/main.js "-c" "benchmark/disaster/config.yaml" "-n" "network/fabric-v1.4/dev/fabric-go.json"
+
+info: [bench-flow.js]: ####### Caliper Test #######
+info: [bench-flow.js]: Executing command: docker-compose -f network/fabric-v1.4/dev/docker-compose.yaml up -d;sleep 3s
+info: [create-channel.js]: Creating mychannel...
+info: [create-channel.js]: Created mychannel successfully
+info: [create-channel.js]: Sleeping 5s...
+info: [join-channel.js]: Joining channels...
+info: [join-channel.js]: Joining organization org1 to channel mychannel...
+info: [join-channel.js]: Successfully joined peerOrg1's peers to mychannel
+info: [join-channel.js]: Successfully joined mychannel
+info: [install-chaincode.js]: installing all chaincodes......
+info: [install-chaincode.js]: Installing chaincode disaster...
+info: [install-chaincode.js]: Installed chaincode disaster successfully in all peers
+info: [instantiate-chaincode.js]: Instantiating chaincodes...
+info: [e2eUtils.js]: instantiate proposal was good
+info: [e2eUtils.js]: Successfully sent Proposal and received ProposalResponse
+info: [e2eUtils.js]: The chaincode instantiate transaction has been committed on peer localhost:7051
+info: [e2eUtils.js]: The chaincode instantiate transaction was valid.
+info: [e2eUtils.js]: Successfully sent instantiatetransaction to the orderer.
+info: [instantiate-chaincode.js]: Instantiated chaincode disaster successfully
+info: [instantiate-chaincode.js]: Sleeping 5s...
+info: [bench-flow.js]: Started monitor successfully
+info: [bench-flow.js]: ####### Testing 'init' #######
+info: [bench-flow.js]: ------ Test round 1 ------
+info: [demo.js]: [Transaction Info] - Submitted: 0 Succ: 0 Fail:0 Unfinished:0
+info: [demo.js]: [Transaction Info] - Submitted: 0 Succ: 0 Fail:0 Unfinished:0
+info: [demo.js]: [Transaction Info] - Submitted: 0 Succ: 0 Fail:0 Unfinished:0
+info: [demo.js]: [Transaction Info] - Submitted: 0 Succ: 0 Fail:0 Unfinished:0
+info: [demo.js]: [Transaction Info] - Submitted: 4 Succ: 2 Fail:0 Unfinished:2
+info: [demo.js]: [Transaction Info] - Submitted: 29 Succ: 14 Fail:0 Unfinished:15
+info: [demo.js]: [Transaction Info] - Submitted: 54 Succ: 38 Fail:0 Unfinished:16
+info: [demo.js]: [Transaction Info] - Submitted: 79 Succ: 59 Fail:0 Unfinished:20
+info: [demo.js]: [Transaction Info] - Submitted: 104 Succ: 83 Fail:0 Unfinished:21
+info: [demo.js]: [Transaction Info] - Submitted: 129 Succ: 104 Fail:0 Unfinished:25
+info: [demo.js]: [Transaction Info] - Submitted: 154 Succ: 128 Fail:0 Unfinished:26
+info: [demo.js]: [Transaction Info] - Submitted: 179 Succ: 156 Fail:0 Unfinished:23
+info: [demo.js]: [Transaction Info] - Submitted: 204 Succ: 181 Fail:0 Unfinished:23
+info: [demo.js]: [Transaction Info] - Submitted: 229 Succ: 204 Fail:0 Unfinished:25
+info: [demo.js]: [Transaction Info] - Submitted: 254 Succ: 222 Fail:0 Unfinished:32
+info: [demo.js]: [Transaction Info] - Submitted: 279 Succ: 245 Fail:0 Unfinished:34
+info: [demo.js]: [Transaction Info] - Submitted: 304 Succ: 265 Fail:0 Unfinished:39
+info: [demo.js]: [Transaction Info] - Submitted: 329 Succ: 291 Fail:0 Unfinished:38
+info: [demo.js]: [Transaction Info] - Submitted: 354 Succ: 310 Fail:0 Unfinished:44
+info: [demo.js]: [Transaction Info] - Submitted: 379 Succ: 335 Fail:0 Unfinished:44
+info: [demo.js]: [Transaction Info] - Submitted: 404 Succ: 355 Fail:0 Unfinished:49
+info: [demo.js]: [Transaction Info] - Submitted: 429 Succ: 384 Fail:0 Unfinished:45
+info: [demo.js]: [Transaction Info] - Submitted: 454 Succ: 408 Fail:0 Unfinished:46
+info: [demo.js]: [Transaction Info] - Submitted: 479 Succ: 422 Fail:0 Unfinished:57
+info: [demo.js]: [Transaction Info] - Submitted: 500 Succ: 459 Fail:0 Unfinished:41
+info: [demo.js]: [Transaction Info] - Submitted: 500 Succ: 484 Fail:0 Unfinished:16
+info: [demo.js]: [Transaction Info] - Submitted: 500 Succ: 498 Fail:0 Unfinished:2
+info: [bench-flow.js]: ###test result:###
+info: [bench-flow.js]: 
++------+------+------+-----------+-------------+-------------+-------------+------------+
+| Name | Succ | Fail | Send Rate | Max Latency | Min Latency | Avg Latency | Throughput |
+|------|------|------|-----------|-------------|-------------|-------------|------------|
+| init | 500  | 0    | 24.9 tps  | 2.67 s      | 0.40 s      | 1.41 s      | 22.2 tps   |
++------+------+------+-----------+-------------+-------------+-------------+------------+
+
+info: [bench-flow.js]: ### resource stats ###
+info: [bench-flow.js]: 
++---------+-----------------------------------+-------------+-------------+----------+----------+------------+-------------+-----------+------------+
+| TYPE    | NAME                              | Memory(max) | Memory(avg) | CPU(max) | CPU(avg) | Traffic In | Traffic Out | Disc Read | Disc Write |
+|---------|-----------------------------------|-------------|-------------|----------|----------|------------|-------------|-----------|------------|
+| Process | node local-client.js(avg)         | 133.2MB     | 130.8MB     | 71.38%   | 12.58%   | -          | -           | -         | -          |
+|---------|-----------------------------------|-------------|-------------|----------|----------|------------|-------------|-----------|------------|
+| Docker  | dev-peer0.org1.example.co...er-v1 | 6.3MB       | 5.2MB       | 2.60%    | 1.71%    | 890.0KB    | 402.0KB     | 0B        | 0B         |
+|---------|-----------------------------------|-------------|-------------|----------|----------|------------|-------------|-----------|------------|
+| Docker  | peer0.org1.example.com            | 80.7MB      | 78.9MB      | 14.78%   | 11.24%   | 2.8MB      | 1.9MB       | 0B        | 6.6MB      |
+|---------|-----------------------------------|-------------|-------------|----------|----------|------------|-------------|-----------|------------|
+| Docker  | orderer.example.com               | 14.7MB      | 12.7MB      | 4.47%    | 3.07%    | 1.8MB      | 1.9MB       | 0B        | 4.2MB      |
+|---------|-----------------------------------|-------------|-------------|----------|----------|------------|-------------|-----------|------------|
+| Docker  | ca.org1.example.com               | 7.8MB       | 7.8MB       | 0.00%    | 0.00%    | 371B       | 0B          | 0B        | 0B         |
++---------+-----------------------------------+-------------+-------------+----------+----------+------------+-------------+-----------+------------+
+
+info: [bench-flow.js]: ------ Passed 'init' testing ------
+info: [bench-flow.js]: Waiting 5 seconds for the next round...
+info: [demo.js]: [Transaction Info] - Submitted: 500 Succ: 500 Fail:0 Unfinished:0
+info: [demo.js]: [Transaction Info] - Submitted: 500 Succ: 500 Fail:0 Unfinished:0
+info: [demo.js]: [Transaction Info] - Submitted: 500 Succ: 500 Fail:0 Unfinished:0
+info: [demo.js]: [Transaction Info] - Submitted: 500 Succ: 500 Fail:0 Unfinished:0
+info: [demo.js]: [Transaction Info] - Submitted: 500 Succ: 500 Fail:0 Unfinished:0
+info: [bench-flow.js]: ------ Test round 2 ------
+info: [demo.js]: [Transaction Info] - Submitted: 500 Succ: 500 Fail:0 Unfinished:0
+info: [demo.js]: [Transaction Info] - Submitted: 550 Succ: 510 Fail:0 Unfinished:40
+info: [demo.js]: [Transaction Info] - Submitted: 600 Succ: 540 Fail:0 Unfinished:60
+info: [demo.js]: [Transaction Info] - Submitted: 650 Succ: 560 Fail:0 Unfinished:90
+info: [demo.js]: [Transaction Info] - Submitted: 700 Succ: 590 Fail:0 Unfinished:110
+info: [demo.js]: [Transaction Info] - Submitted: 750 Succ: 610 Fail:0 Unfinished:140
+info: [demo.js]: [Transaction Info] - Submitted: 800 Succ: 640 Fail:0 Unfinished:160
+info: [demo.js]: [Transaction Info] - Submitted: 850 Succ: 660 Fail:0 Unfinished:190
+info: [demo.js]: [Transaction Info] - Submitted: 900 Succ: 684 Fail:0 Unfinished:216
+info: [demo.js]: [Transaction Info] - Submitted: 950 Succ: 710 Fail:0 Unfinished:240
+info: [demo.js]: [Transaction Info] - Submitted: 1000 Succ: 740 Fail:0 Unfinished:260
+info: [demo.js]: [Transaction Info] - Submitted: 1000 Succ: 780 Fail:0 Unfinished:220
+info: [demo.js]: [Transaction Info] - Submitted: 1000 Succ: 810 Fail:0 Unfinished:190
+info: [demo.js]: [Transaction Info] - Submitted: 1000 Succ: 850 Fail:0 Unfinished:150
+info: [demo.js]: [Transaction Info] - Submitted: 1000 Succ: 880 Fail:0 Unfinished:120
+info: [demo.js]: [Transaction Info] - Submitted: 1000 Succ: 920 Fail:0 Unfinished:80
+info: [demo.js]: [Transaction Info] - Submitted: 1000 Succ: 950 Fail:0 Unfinished:50
+info: [demo.js]: [Transaction Info] - Submitted: 1000 Succ: 990 Fail:0 Unfinished:10
+info: [bench-flow.js]: ###test result:###
+info: [bench-flow.js]: 
++------+------+------+-----------+-------------+-------------+-------------+------------+
+| Name | Succ | Fail | Send Rate | Max Latency | Min Latency | Avg Latency | Throughput |
+|------|------|------|-----------|-------------|-------------|-------------|------------|
+| init | 500  | 0    | 50.2 tps  | 7.40 s      | 0.48 s      | 4.65 s      | 29.1 tps   |
++------+------+------+-----------+-------------+-------------+-------------+------------+
+
+info: [bench-flow.js]: ### resource stats ###
+info: [bench-flow.js]: 
++---------+-----------------------------------+-------------+-------------+----------+----------+------------+-------------+-----------+------------+
+| TYPE    | NAME                              | Memory(max) | Memory(avg) | CPU(max) | CPU(avg) | Traffic In | Traffic Out | Disc Read | Disc Write |
+|---------|-----------------------------------|-------------|-------------|----------|----------|------------|-------------|-----------|------------|
+| Process | node local-client.js(avg)         | 135.3MB     | 134.7MB     | 13.59%   | 6.91%    | -          | -           | -         | -          |
+|---------|-----------------------------------|-------------|-------------|----------|----------|------------|-------------|-----------|------------|
+| Docker  | dev-peer0.org1.example.co...er-v1 | 6.4MB       | 6.4MB       | 5.08%    | 2.59%    | 842.4KB    | 388.4KB     | 0B        | 0B         |
+|---------|-----------------------------------|-------------|-------------|----------|----------|------------|-------------|-----------|------------|
+| Docker  | peer0.org1.example.com            | 83.1MB      | 81.9MB      | 22.59%   | 16.21%   | 2.7MB      | 1.7MB       | 0B        | 5.5MB      |
+|---------|-----------------------------------|-------------|-------------|----------|----------|------------|-------------|-----------|------------|
+| Docker  | orderer.example.com               | 16.7MB      | 16.1MB      | 8.82%    | 4.43%    | 1.7MB      | 1.8MB       | 0B        | 3.8MB      |
+|---------|-----------------------------------|-------------|-------------|----------|----------|------------|-------------|-----------|------------|
+| Docker  | ca.org1.example.com               | 7.8MB       | 7.8MB       | 0.00%    | 0.00%    | 0B         | 0B          | 0B        | 0B         |
++---------+-----------------------------------+-------------+-------------+----------+----------+------------+-------------+-----------+------------+
+
+info: [bench-flow.js]: ------ Passed 'init' testing ------
+info: [bench-flow.js]: Waiting 5 seconds for the next round...
+info: [demo.js]: [Transaction Info] - Submitted: 1000 Succ: 1000 Fail:0 Unfinished:0
+info: [demo.js]: [Transaction Info] - Submitted: 1000 Succ: 1000 Fail:0 Unfinished:0
+info: [demo.js]: [Transaction Info] - Submitted: 1000 Succ: 1000 Fail:0 Unfinished:0
+info: [demo.js]: [Transaction Info] - Submitted: 1000 Succ: 1000 Fail:0 Unfinished:0
+info: [demo.js]: [Transaction Info] - Submitted: 1000 Succ: 1000 Fail:0 Unfinished:0
+info: [bench-flow.js]: ------ Test round 3 ------
+info: [demo.js]: [Transaction Info] - Submitted: 1000 Succ: 1000 Fail:0 Unfinished:0
+info: [demo.js]: [Transaction Info] - Submitted: 1075 Succ: 1010 Fail:0 Unfinished:65
+
+> caliper@0.1.0 bench /home/vinayak/Documents/go/src/github.com/hyperledger/caliper
+> node ./scripts/main.js "-c" "benchmark/disaster/config.yaml" "-n" "network/fabric-v1.4/dev/fabric-go.json"
+
+info: [bench-flow.js]: ####### Caliper Test #######
+info: [bench-flow.js]: Executing command: docker-compose -f network/fabric-v1.4/dev/docker-compose.yaml up -d;sleep 3s
+info: [create-channel.js]: Creating mychannel...
+info: [demo.js]: [Transaction Info] - Submitted: 0 Succ: 0 Fail:0 Unfinished:0
+info: [bench-flow.js]: Executing command: docker-compose -f network/fabric-v1.4/dev/docker-compose.yaml down;docker rm $(docker ps -aq);docker rmi $(docker images dev* -q)
+c347fb9f8d87
+Untagged: dev-peer0.org1.example.com-disaster-v1-7255a626dc7df4886305ae42dd28c6defa412a26d36035703dff693771760355:latest
+Deleted: sha256:4268cd66bed4aba9da4205cf91c2da265c7294b8c785b822f86686a08a9e0d5d
+Deleted: sha256:b7e59cbcc5d2a503804099f1c1251c1395965a2913bc13131c604c5e92b26a09
+Deleted: sha256:4aa614c88ec9d2bb12496f0e014cb9b6aa8a897b8dd43a9216ba8a02f9f0fc36
+Deleted: sha256:f9284bd7ef27508047f6f5f179b15a44dca583d2d755fbb5a8b968c2d3828719
+info: [bench-flow.js]: 
+
+#######################################
+# Test summary: 0 succeeded, 0 failed #
+#######################################
+
+info: [scripts/main.js]: Benchmark run successfully
